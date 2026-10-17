@@ -1,0 +1,2906 @@
+{
+ "version": 1,
+ "items": [
+  {
+   "id": "g:notosanskr",
+   "name": "본고딕 (Noto Sans KR)",
+   "nameEN": "Noto Sans KR",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Noto+Sans+KR",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "구글·어도비 공동 한글 고딕. 굵기 9단계, 본문·UI 만능.",
+   "match": [
+    "Noto Sans KR"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "notosanskr"
+   }
+  },
+  {
+   "id": "g:notoserifkr",
+   "name": "본명조 (Noto Serif KR)",
+   "nameEN": "Noto Serif KR",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Noto+Serif+KR",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif"
+   ],
+   "desc": "본고딕의 명조 짝. 긴 글·인쇄물에.",
+   "match": [
+    "Noto Serif KR"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "notoserifkr"
+   }
+  },
+  {
+   "id": "g:gothica1",
+   "name": "고딕 A1",
+   "nameEN": "Gothic A1",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Gothic+A1",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "굵기 9단계의 단정한 한글 고딕. 제목부터 본문까지.",
+   "match": [
+    "Gothic A1"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "gothica1"
+   }
+  },
+  {
+   "id": "g:ibmplexsanskr",
+   "name": "IBM Plex Sans KR",
+   "nameEN": "IBM Plex Sans KR",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/IBM+Plex+Sans+KR",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "IBM 기업 서체의 한글판. 영문과 한글 어울림이 좋다.",
+   "match": [
+    "IBM Plex Sans KR"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "ibmplexsanskr"
+   }
+  },
+  {
+   "id": "g:gowundodum",
+   "name": "고운돋움",
+   "nameEN": "Gowun Dodum",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Gowun+Dodum",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans",
+    "round"
+   ],
+   "desc": "부드러운 돋움체. 에세이·감성 콘텐츠용 본문.",
+   "match": [
+    "Gowun Dodum"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "gowundodum"
+   }
+  },
+  {
+   "id": "g:gowunbatang",
+   "name": "고운바탕",
+   "nameEN": "Gowun Batang",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Gowun+Batang",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif"
+   ],
+   "desc": "고운돋움의 바탕 짝. 따뜻한 인쇄 느낌.",
+   "match": [
+    "Gowun Batang"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "gowunbatang"
+   }
+  },
+  {
+   "id": "g:hahmlet",
+   "name": "함렛",
+   "nameEN": "Hahmlet",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Hahmlet",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif"
+   ],
+   "desc": "현대적인 세리프 한글. 굵기 9단계, 제목에 멋이 난다.",
+   "match": [
+    "Hahmlet"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "hahmlet"
+   }
+  },
+  {
+   "id": "g:nanumgothic",
+   "name": "나눔고딕",
+   "nameEN": "Nanum Gothic",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Nanum+Gothic",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "가장 널리 쓰이는 무료 한글 고딕. 없으면 꼭.",
+   "match": [
+    "Nanum Gothic"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "nanumgothic"
+   }
+  },
+  {
+   "id": "g:nanummyeongjo",
+   "name": "나눔명조",
+   "nameEN": "Nanum Myeongjo",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Nanum+Myeongjo",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif"
+   ],
+   "desc": "나눔 시리즈 명조. 본문·인쇄.",
+   "match": [
+    "Nanum Myeongjo"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "nanummyeongjo"
+   }
+  },
+  {
+   "id": "g:nanumpenscript",
+   "name": "나눔손글씨 펜",
+   "nameEN": "Nanum Pen Script",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Nanum+Pen+Script",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "hand"
+   ],
+   "desc": "펜으로 쓴 손글씨. 가볍고 친근한 메모 느낌.",
+   "match": [
+    "Nanum Pen Script"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "nanumpenscript"
+   }
+  },
+  {
+   "id": "g:nanumbrushscript",
+   "name": "나눔손글씨 붓",
+   "nameEN": "Nanum Brush Script",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Nanum+Brush+Script",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "brush"
+   ],
+   "desc": "붓글씨 느낌의 손글씨. 감성 제목.",
+   "match": [
+    "Nanum Brush Script"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "nanumbrushscript"
+   }
+  },
+  {
+   "id": "g:nanumgothiccoding",
+   "name": "나눔고딕코딩",
+   "nameEN": "Nanum Gothic Coding",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Nanum+Gothic+Coding",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "고정폭 한글. 코드·표·숫자 정렬.",
+   "match": [
+    "Nanum Gothic Coding"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "nanumgothiccoding"
+   }
+  },
+  {
+   "id": "g:blackhansans",
+   "name": "검은고딕",
+   "nameEN": "Black Han Sans",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Black+Han+Sans",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "black",
+    "sans"
+   ],
+   "desc": "아주 두꺼운 제목용 고딕. 포스터·썸네일 한 방.",
+   "match": [
+    "Black Han Sans"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "blackhansans"
+   }
+  },
+  {
+   "id": "g:dohyeon",
+   "name": "도현체 (배민)",
+   "nameEN": "Do Hyeon",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Do+Hyeon",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "black",
+    "sans",
+    "narrow"
+   ],
+   "desc": "배달의민족 도현. 꽉 찬 제목체.",
+   "match": [
+    "Do Hyeon"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "dohyeon"
+   }
+  },
+  {
+   "id": "g:jua",
+   "name": "주아체 (배민)",
+   "nameEN": "Jua",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Jua",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "round",
+    "black"
+   ],
+   "desc": "배달의민족 주아. 둥글고 통통한 귀여운 제목.",
+   "match": [
+    "Jua"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "jua"
+   }
+  },
+  {
+   "id": "g:gaegu",
+   "name": "개구체",
+   "nameEN": "Gaegu",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Gaegu",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "hand",
+    "round"
+   ],
+   "desc": "삐뚤빼뚤 귀여운 손글씨. 아이·일상 콘텐츠.",
+   "match": [
+    "Gaegu"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "gaegu"
+   }
+  },
+  {
+   "id": "g:gamjaflower",
+   "name": "감자꽃체",
+   "nameEN": "Gamja Flower",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Gamja+Flower",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "hand"
+   ],
+   "desc": "펜 손글씨. 편지·일기 느낌.",
+   "match": [
+    "Gamja Flower"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "gamjaflower"
+   }
+  },
+  {
+   "id": "g:himelody",
+   "name": "하이멜로디",
+   "nameEN": "Hi Melody",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Hi+Melody",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "hand",
+    "round"
+   ],
+   "desc": "동글동글 귀여운 손글씨.",
+   "match": [
+    "Hi Melody"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "himelody"
+   }
+  },
+  {
+   "id": "g:poorstory",
+   "name": "푸어스토리",
+   "nameEN": "Poor Story",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Poor+Story",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "hand"
+   ],
+   "desc": "어린이가 쓴 듯한 손글씨.",
+   "match": [
+    "Poor Story"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "poorstory"
+   }
+  },
+  {
+   "id": "g:cutefont",
+   "name": "큐트폰트",
+   "nameEN": "Cute Font",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Cute+Font",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "hand",
+    "round"
+   ],
+   "desc": "작고 귀여운 손글씨. 스티커·말풍선.",
+   "match": [
+    "Cute Font"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "cutefont"
+   }
+  },
+  {
+   "id": "g:sunflower",
+   "name": "해바라기",
+   "nameEN": "Sunflower",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Sunflower",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans",
+    "narrow"
+   ],
+   "desc": "길쭉하고 가벼운 고딕. 세련된 제목.",
+   "match": [
+    "Sunflower"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "sunflower"
+   }
+  },
+  {
+   "id": "g:stylish",
+   "name": "스타일리시",
+   "nameEN": "Stylish",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Stylish",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "deco",
+    "sans"
+   ],
+   "desc": "획이 독특한 디스플레이 고딕.",
+   "match": [
+    "Stylish"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "stylish"
+   }
+  },
+  {
+   "id": "g:yeonsung",
+   "name": "연성체",
+   "nameEN": "Yeon Sung",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Yeon+Sung",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "hand",
+    "round"
+   ],
+   "desc": "둥글둥글 손글씨 제목.",
+   "match": [
+    "Yeon Sung"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "yeonsung"
+   }
+  },
+  {
+   "id": "g:dokdo",
+   "name": "독도체",
+   "nameEN": "Dokdo",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Dokdo",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "brush"
+   ],
+   "desc": "붓 터치가 살아 있는 손글씨.",
+   "match": [
+    "Dokdo"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "dokdo"
+   }
+  },
+  {
+   "id": "g:eastseadokdo",
+   "name": "동해독도체",
+   "nameEN": "East Sea Dokdo",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/East+Sea+Dokdo",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "brush"
+   ],
+   "desc": "거친 붓글씨. 강한 제목.",
+   "match": [
+    "East Sea Dokdo"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "eastseadokdo"
+   }
+  },
+  {
+   "id": "g:kiranghaerang",
+   "name": "기랑해랑",
+   "nameEN": "Kirang Haerang",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Kirang+Haerang",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "brush",
+    "deco"
+   ],
+   "desc": "붓으로 쓴 전통 느낌 서체.",
+   "match": [
+    "Kirang Haerang"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "kiranghaerang"
+   }
+  },
+  {
+   "id": "g:songmyung",
+   "name": "송명체",
+   "nameEN": "Song Myung",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Song+Myung",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif"
+   ],
+   "desc": "옛 활자 느낌의 명조. 빈티지 제목.",
+   "match": [
+    "Song Myung"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "songmyung"
+   }
+  },
+  {
+   "id": "g:gugi",
+   "name": "구기체",
+   "nameEN": "Gugi",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Gugi",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "deco",
+    "round"
+   ],
+   "desc": "둥글고 재미있는 디스플레이체.",
+   "match": [
+    "Gugi"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "gugi"
+   }
+  },
+  {
+   "id": "g:singleday",
+   "name": "싱글데이",
+   "nameEN": "Single Day",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Single+Day",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "deco",
+    "round"
+   ],
+   "desc": "통통 튀는 디스플레이체. 이벤트 제목.",
+   "match": [
+    "Single Day"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "singleday"
+   }
+  },
+  {
+   "id": "g:blackandwhitepicture",
+   "name": "흑백사진체",
+   "nameEN": "Black And White Picture",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Black+And+White+Picture",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "deco",
+    "hand"
+   ],
+   "desc": "복고 간판 느낌 손글씨.",
+   "match": [
+    "Black And White Picture"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "blackandwhitepicture"
+   }
+  },
+  {
+   "id": "g:diphylleia",
+   "name": "산하엽체",
+   "nameEN": "Diphylleia",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Diphylleia",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif",
+    "hand"
+   ],
+   "desc": "펜으로 쓴 명조 느낌. 감성 글귀.",
+   "match": [
+    "Diphylleia"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "diphylleia"
+   }
+  },
+  {
+   "id": "g:orbit",
+   "name": "오르빗",
+   "nameEN": "Orbit",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Orbit",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "deco",
+    "sans"
+   ],
+   "desc": "기하학적 디스플레이 고딕. 테크·미래 느낌.",
+   "match": [
+    "Orbit"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "orbit"
+   }
+  },
+  {
+   "id": "g:moiraione",
+   "name": "모이라이",
+   "nameEN": "Moirai One",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Moirai+One",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "deco",
+    "black"
+   ],
+   "desc": "도트가 모인 듯한 두꺼운 디스플레이체.",
+   "match": [
+    "Moirai One"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "moiraione"
+   }
+  },
+  {
+   "id": "g:grandifloraone",
+   "name": "그랜디플로라",
+   "nameEN": "Grandiflora One",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Grandiflora+One",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif",
+    "deco"
+   ],
+   "desc": "꽃잎처럼 우아한 세리프 디스플레이.",
+   "match": [
+    "Grandiflora One"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "grandifloraone"
+   }
+  },
+  {
+   "id": "g:dongle",
+   "name": "동글체",
+   "nameEN": "Dongle",
+   "lang": "ko",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Dongle",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "round",
+    "black"
+   ],
+   "desc": "둥글고 귀여운 제목체. 굵기 3단계.",
+   "match": [
+    "Dongle"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "dongle"
+   }
+  },
+  {
+   "id": "g:inter",
+   "name": "Inter",
+   "nameEN": "Inter",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Inter",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "UI 표준 산세리프. 화면용 본문·숫자.",
+   "match": [
+    "Inter"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "inter"
+   }
+  },
+  {
+   "id": "g:roboto",
+   "name": "Roboto",
+   "nameEN": "Roboto",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Roboto",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "안드로이드 기본 고딕. 어디에나 무난.",
+   "match": [
+    "Roboto"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "roboto"
+   }
+  },
+  {
+   "id": "g:montserrat",
+   "name": "Montserrat",
+   "nameEN": "Montserrat",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Montserrat",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans",
+    "wide"
+   ],
+   "desc": "기하학적 제목용 고딕. 대문자가 예쁘다.",
+   "match": [
+    "Montserrat"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "montserrat"
+   }
+  },
+  {
+   "id": "g:poppins",
+   "name": "Poppins",
+   "nameEN": "Poppins",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Poppins",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans",
+    "round"
+   ],
+   "desc": "둥근 기하학 고딕. 친근한 브랜드.",
+   "match": [
+    "Poppins"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "poppins"
+   }
+  },
+  {
+   "id": "g:dmsans",
+   "name": "DM Sans",
+   "nameEN": "DM Sans",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/DM+Sans",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "낮은 대비의 깔끔한 고딕. 웹·앱.",
+   "match": [
+    "DM Sans"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "dmsans"
+   }
+  },
+  {
+   "id": "g:manrope",
+   "name": "Manrope",
+   "nameEN": "Manrope",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Manrope",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "현대적인 가변 고딕. 스타트업 느낌.",
+   "match": [
+    "Manrope"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "manrope"
+   }
+  },
+  {
+   "id": "g:outfit",
+   "name": "Outfit",
+   "nameEN": "Outfit",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Outfit",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans",
+    "round"
+   ],
+   "desc": "기하학적 둥근 고딕. 제목.",
+   "match": [
+    "Outfit"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "outfit"
+   }
+  },
+  {
+   "id": "g:plusjakartasans",
+   "name": "Plus Jakarta Sans",
+   "nameEN": "Plus Jakarta Sans",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Plus+Jakarta+Sans",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "부드러운 모던 고딕.",
+   "match": [
+    "Plus Jakarta Sans"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "plusjakartasans"
+   }
+  },
+  {
+   "id": "g:figtree",
+   "name": "Figtree",
+   "nameEN": "Figtree",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Figtree",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans",
+    "round"
+   ],
+   "desc": "친근한 둥근 고딕.",
+   "match": [
+    "Figtree"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "figtree"
+   }
+  },
+  {
+   "id": "g:worksans",
+   "name": "Work Sans",
+   "nameEN": "Work Sans",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Work+Sans",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "본문·제목 모두 되는 고딕.",
+   "match": [
+    "Work Sans"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "worksans"
+   }
+  },
+  {
+   "id": "g:josefinsans",
+   "name": "Josefin Sans",
+   "nameEN": "Josefin Sans",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Josefin+Sans",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans",
+    "deco"
+   ],
+   "desc": "1920년대 기하학 빈티지 고딕.",
+   "match": [
+    "Josefin Sans"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "josefinsans"
+   }
+  },
+  {
+   "id": "g:raleway",
+   "name": "Raleway",
+   "nameEN": "Raleway",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Raleway",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans",
+    "thin"
+   ],
+   "desc": "우아한 얇은 고딕. 패션·뷰티.",
+   "match": [
+    "Raleway"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "raleway"
+   }
+  },
+  {
+   "id": "g:spacegrotesk",
+   "name": "Space Grotesk",
+   "nameEN": "Space Grotesk",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Space+Grotesk",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans",
+    "deco"
+   ],
+   "desc": "독특한 글자꼴의 그로테스크. 테크.",
+   "match": [
+    "Space Grotesk"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "spacegrotesk"
+   }
+  },
+  {
+   "id": "g:syne",
+   "name": "Syne",
+   "nameEN": "Syne",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Syne",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans",
+    "wide",
+    "deco"
+   ],
+   "desc": "넓은 아트 디스플레이 고딕.",
+   "match": [
+    "Syne"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "syne"
+   }
+  },
+  {
+   "id": "g:bricolagegrotesque",
+   "name": "Bricolage Grotesque",
+   "nameEN": "Bricolage Grotesque",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Bricolage+Grotesque",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans",
+    "deco"
+   ],
+   "desc": "개성 있는 가변 그로테스크.",
+   "match": [
+    "Bricolage Grotesque"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "bricolagegrotesque"
+   }
+  },
+  {
+   "id": "g:unbounded",
+   "name": "Unbounded",
+   "nameEN": "Unbounded",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Unbounded",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans",
+    "wide",
+    "black"
+   ],
+   "desc": "넓고 두꺼운 디스플레이 고딕.",
+   "match": [
+    "Unbounded"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "unbounded"
+   }
+  },
+  {
+   "id": "g:playfairdisplay",
+   "name": "Playfair Display",
+   "nameEN": "Playfair Display",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Playfair+Display",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif",
+    "deco"
+   ],
+   "desc": "고대비 제목 세리프. 매거진 느낌.",
+   "match": [
+    "Playfair Display"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "playfairdisplay"
+   }
+  },
+  {
+   "id": "g:dmserifdisplay",
+   "name": "DM Serif Display",
+   "nameEN": "DM Serif Display",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/DM+Serif+Display",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif",
+    "black"
+   ],
+   "desc": "두껍고 우아한 제목 세리프.",
+   "match": [
+    "DM Serif Display"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "dmserifdisplay"
+   }
+  },
+  {
+   "id": "g:instrumentserif",
+   "name": "Instrument Serif",
+   "nameEN": "Instrument Serif",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Instrument+Serif",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif",
+    "narrow"
+   ],
+   "desc": "좁고 세련된 제목 세리프. 요즘 유행.",
+   "match": [
+    "Instrument Serif"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "instrumentserif"
+   }
+  },
+  {
+   "id": "g:cormorantgaramond",
+   "name": "Cormorant Garamond",
+   "nameEN": "Cormorant Garamond",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Cormorant+Garamond",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif",
+    "thin"
+   ],
+   "desc": "가늘고 고전적인 가라몬드.",
+   "match": [
+    "Cormorant Garamond"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "cormorantgaramond"
+   }
+  },
+  {
+   "id": "g:ebgaramond",
+   "name": "EB Garamond",
+   "nameEN": "EB Garamond",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/EB+Garamond",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif"
+   ],
+   "desc": "본문용 가라몬드. 책 느낌.",
+   "match": [
+    "EB Garamond"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "ebgaramond"
+   }
+  },
+  {
+   "id": "g:lora",
+   "name": "Lora",
+   "nameEN": "Lora",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Lora",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif"
+   ],
+   "desc": "화면에서도 잘 읽히는 본문 세리프.",
+   "match": [
+    "Lora"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "lora"
+   }
+  },
+  {
+   "id": "g:merriweather",
+   "name": "Merriweather",
+   "nameEN": "Merriweather",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Merriweather",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif"
+   ],
+   "desc": "튼튼한 본문 세리프.",
+   "match": [
+    "Merriweather"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "merriweather"
+   }
+  },
+  {
+   "id": "g:librebaskerville",
+   "name": "Libre Baskerville",
+   "nameEN": "Libre Baskerville",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Libre+Baskerville",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif"
+   ],
+   "desc": "바스커빌 본문 세리프.",
+   "match": [
+    "Libre Baskerville"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "librebaskerville"
+   }
+  },
+  {
+   "id": "g:sourceserif4",
+   "name": "Source Serif 4",
+   "nameEN": "Source Serif 4",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Source+Serif+4",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif"
+   ],
+   "desc": "어도비 Source 계열 세리프.",
+   "match": [
+    "Source Serif 4"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "sourceserif4"
+   }
+  },
+  {
+   "id": "g:bodonimoda",
+   "name": "Bodoni Moda",
+   "nameEN": "Bodoni Moda",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Bodoni+Moda",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif",
+    "deco"
+   ],
+   "desc": "고대비 보도니. 패션 매거진.",
+   "match": [
+    "Bodoni Moda"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "bodonimoda"
+   }
+  },
+  {
+   "id": "g:cinzel",
+   "name": "Cinzel",
+   "nameEN": "Cinzel",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Cinzel",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif",
+    "deco",
+    "wide"
+   ],
+   "desc": "로마 비문 대문자. 고급·클래식.",
+   "match": [
+    "Cinzel"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "cinzel"
+   }
+  },
+  {
+   "id": "g:gloock",
+   "name": "Gloock",
+   "nameEN": "Gloock",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Gloock",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif",
+    "black"
+   ],
+   "desc": "두꺼운 고대비 제목 세리프.",
+   "match": [
+    "Gloock"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "gloock"
+   }
+  },
+  {
+   "id": "g:bebasneue",
+   "name": "Bebas Neue",
+   "nameEN": "Bebas Neue",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Bebas+Neue",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "narrow",
+    "black",
+    "sans"
+   ],
+   "desc": "좁고 키 큰 대문자 제목체. 포스터.",
+   "match": [
+    "Bebas Neue"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "bebasneue"
+   }
+  },
+  {
+   "id": "g:oswald",
+   "name": "Oswald",
+   "nameEN": "Oswald",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Oswald",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "narrow",
+    "sans"
+   ],
+   "desc": "좁은 고딕. 신문 헤드라인.",
+   "match": [
+    "Oswald"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "oswald"
+   }
+  },
+  {
+   "id": "g:anton",
+   "name": "Anton",
+   "nameEN": "Anton",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Anton",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "narrow",
+    "black",
+    "sans"
+   ],
+   "desc": "매우 두껍고 좁은 임팩트 제목체.",
+   "match": [
+    "Anton"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "anton"
+   }
+  },
+  {
+   "id": "g:barlowcondensed",
+   "name": "Barlow Condensed",
+   "nameEN": "Barlow Condensed",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Barlow+Condensed",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "narrow",
+    "sans"
+   ],
+   "desc": "좁은 고딕 가족. 굵기 다양.",
+   "match": [
+    "Barlow Condensed"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "barlowcondensed"
+   }
+  },
+  {
+   "id": "g:sixcaps",
+   "name": "Six Caps",
+   "nameEN": "Six Caps",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Six+Caps",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "narrow",
+    "deco"
+   ],
+   "desc": "극단적으로 좁은 대문자.",
+   "match": [
+    "Six Caps"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "sixcaps"
+   }
+  },
+  {
+   "id": "g:archivoblack",
+   "name": "Archivo Black",
+   "nameEN": "Archivo Black",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Archivo+Black",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "black",
+    "sans"
+   ],
+   "desc": "두꺼운 그로테스크 제목.",
+   "match": [
+    "Archivo Black"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "archivoblack"
+   }
+  },
+  {
+   "id": "g:alfaslabone",
+   "name": "Alfa Slab One",
+   "nameEN": "Alfa Slab One",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Alfa+Slab+One",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "black",
+    "serif",
+    "deco"
+   ],
+   "desc": "두꺼운 슬랩 세리프. 레트로 포스터.",
+   "match": [
+    "Alfa Slab One"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "alfaslabone"
+   }
+  },
+  {
+   "id": "g:abrilfatface",
+   "name": "Abril Fatface",
+   "nameEN": "Abril Fatface",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Abril+Fatface",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "black",
+    "serif",
+    "deco"
+   ],
+   "desc": "두꺼운 고대비 디스플레이.",
+   "match": [
+    "Abril Fatface"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "abrilfatface"
+   }
+  },
+  {
+   "id": "g:pacifico",
+   "name": "Pacifico",
+   "nameEN": "Pacifico",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Pacifico",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "brush",
+    "round"
+   ],
+   "desc": "서핑 간판 느낌 붓 스크립트.",
+   "match": [
+    "Pacifico"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "pacifico"
+   }
+  },
+  {
+   "id": "g:lobster",
+   "name": "Lobster",
+   "nameEN": "Lobster",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Lobster",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "brush",
+    "black"
+   ],
+   "desc": "두꺼운 스크립트. 로고·간판.",
+   "match": [
+    "Lobster"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "lobster"
+   }
+  },
+  {
+   "id": "g:dancingscript",
+   "name": "Dancing Script",
+   "nameEN": "Dancing Script",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Dancing+Script",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "hand"
+   ],
+   "desc": "경쾌한 필기체.",
+   "match": [
+    "Dancing Script"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "dancingscript"
+   }
+  },
+  {
+   "id": "g:caveat",
+   "name": "Caveat",
+   "nameEN": "Caveat",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Caveat",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "hand"
+   ],
+   "desc": "자연스러운 펜 손글씨. 메모.",
+   "match": [
+    "Caveat"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "caveat"
+   }
+  },
+  {
+   "id": "g:satisfy",
+   "name": "Satisfy",
+   "nameEN": "Satisfy",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Satisfy",
+   "license": "Apache 2.0 (상업용 무료)",
+   "tags": [
+    "brush"
+   ],
+   "desc": "붓펜 스크립트.",
+   "match": [
+    "Satisfy"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "apache",
+    "slug": "satisfy"
+   }
+  },
+  {
+   "id": "g:greatvibes",
+   "name": "Great Vibes",
+   "nameEN": "Great Vibes",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Great+Vibes",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "brush",
+    "thin"
+   ],
+   "desc": "우아한 캘리그래피 스크립트. 초대장.",
+   "match": [
+    "Great Vibes"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "greatvibes"
+   }
+  },
+  {
+   "id": "g:sacramento",
+   "name": "Sacramento",
+   "nameEN": "Sacramento",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Sacramento",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "brush",
+    "thin"
+   ],
+   "desc": "가는 모노라인 스크립트.",
+   "match": [
+    "Sacramento"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "sacramento"
+   }
+  },
+  {
+   "id": "g:permanentmarker",
+   "name": "Permanent Marker",
+   "nameEN": "Permanent Marker",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Permanent+Marker",
+   "license": "Apache 2.0 (상업용 무료)",
+   "tags": [
+    "hand",
+    "black"
+   ],
+   "desc": "매직펜 손글씨.",
+   "match": [
+    "Permanent Marker"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "apache",
+    "slug": "permanentmarker"
+   }
+  },
+  {
+   "id": "g:indieflower",
+   "name": "Indie Flower",
+   "nameEN": "Indie Flower",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Indie+Flower",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "hand",
+    "round"
+   ],
+   "desc": "둥글둥글 친근한 손글씨.",
+   "match": [
+    "Indie Flower"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "indieflower"
+   }
+  },
+  {
+   "id": "g:amaticsc",
+   "name": "Amatic SC",
+   "nameEN": "Amatic SC",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Amatic+SC",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "hand",
+    "narrow"
+   ],
+   "desc": "가늘고 긴 손글씨 대문자.",
+   "match": [
+    "Amatic SC"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "amaticsc"
+   }
+  },
+  {
+   "id": "g:shadowsintolight",
+   "name": "Shadows Into Light",
+   "nameEN": "Shadows Into Light",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Shadows+Into+Light",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "hand"
+   ],
+   "desc": "가벼운 펜 손글씨.",
+   "match": [
+    "Shadows Into Light"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "shadowsintolight"
+   }
+  },
+  {
+   "id": "g:nunito",
+   "name": "Nunito",
+   "nameEN": "Nunito",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Nunito",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "round",
+    "sans"
+   ],
+   "desc": "모서리 둥근 고딕. 부드러운 UI.",
+   "match": [
+    "Nunito"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "nunito"
+   }
+  },
+  {
+   "id": "g:quicksand",
+   "name": "Quicksand",
+   "nameEN": "Quicksand",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Quicksand",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "round",
+    "sans"
+   ],
+   "desc": "둥근 기하학 고딕. 귀여운 브랜드.",
+   "match": [
+    "Quicksand"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "quicksand"
+   }
+  },
+  {
+   "id": "g:comfortaa",
+   "name": "Comfortaa",
+   "nameEN": "Comfortaa",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Comfortaa",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "round",
+    "sans"
+   ],
+   "desc": "매우 둥근 디스플레이 고딕.",
+   "match": [
+    "Comfortaa"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "comfortaa"
+   }
+  },
+  {
+   "id": "g:fredoka",
+   "name": "Fredoka",
+   "nameEN": "Fredoka",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Fredoka",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "round",
+    "black"
+   ],
+   "desc": "통통하고 둥근 제목체. 아이 브랜드.",
+   "match": [
+    "Fredoka"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "fredoka"
+   }
+  },
+  {
+   "id": "g:baloo2",
+   "name": "Baloo 2",
+   "nameEN": "Baloo 2",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Baloo+2",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "round",
+    "black"
+   ],
+   "desc": "둥글고 두꺼운 디스플레이.",
+   "match": [
+    "Baloo 2"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "baloo2"
+   }
+  },
+  {
+   "id": "g:righteous",
+   "name": "Righteous",
+   "nameEN": "Righteous",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Righteous",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "deco",
+    "black"
+   ],
+   "desc": "복고 디스플레이체.",
+   "match": [
+    "Righteous"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "righteous"
+   }
+  },
+  {
+   "id": "g:bungee",
+   "name": "Bungee",
+   "nameEN": "Bungee",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Bungee",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "deco",
+    "black",
+    "wide"
+   ],
+   "desc": "세로 간판용 디스플레이.",
+   "match": [
+    "Bungee"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "bungee"
+   }
+  },
+  {
+   "id": "g:monoton",
+   "name": "Monoton",
+   "nameEN": "Monoton",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Monoton",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "deco"
+   ],
+   "desc": "네온 사인 줄무늬 디스플레이.",
+   "match": [
+    "Monoton"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "monoton"
+   }
+  },
+  {
+   "id": "g:limelight",
+   "name": "Limelight",
+   "nameEN": "Limelight",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Limelight",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "deco"
+   ],
+   "desc": "아르데코 영화 간판체.",
+   "match": [
+    "Limelight"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "limelight"
+   }
+  },
+  {
+   "id": "g:shrikhand",
+   "name": "Shrikhand",
+   "nameEN": "Shrikhand",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Shrikhand",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "deco",
+    "black"
+   ],
+   "desc": "통통한 이탤릭 디스플레이.",
+   "match": [
+    "Shrikhand"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "shrikhand"
+   }
+  },
+  {
+   "id": "g:pressstart2p",
+   "name": "Press Start 2P",
+   "nameEN": "Press Start 2P",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Press+Start+2P",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "deco"
+   ],
+   "desc": "8비트 게임 픽셀 폰트.",
+   "match": [
+    "Press Start 2P"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "pressstart2p"
+   }
+  },
+  {
+   "id": "g:silkscreen",
+   "name": "Silkscreen",
+   "nameEN": "Silkscreen",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Silkscreen",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "deco"
+   ],
+   "desc": "작은 픽셀 폰트.",
+   "match": [
+    "Silkscreen"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "silkscreen"
+   }
+  },
+  {
+   "id": "g:specialelite",
+   "name": "Special Elite",
+   "nameEN": "Special Elite",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Special+Elite",
+   "license": "Apache 2.0 (상업용 무료)",
+   "tags": [
+    "deco",
+    "serif"
+   ],
+   "desc": "타자기 글씨.",
+   "match": [
+    "Special Elite"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "apache",
+    "slug": "specialelite"
+   }
+  },
+  {
+   "id": "g:courierprime",
+   "name": "Courier Prime",
+   "nameEN": "Courier Prime",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Courier+Prime",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "serif"
+   ],
+   "desc": "읽기 좋은 쿠리에. 대본·고정폭.",
+   "match": [
+    "Courier Prime"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "courierprime"
+   }
+  },
+  {
+   "id": "g:jetbrainsmono",
+   "name": "JetBrains Mono",
+   "nameEN": "JetBrains Mono",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/JetBrains+Mono",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "코딩용 고정폭. 숫자·코드 표기.",
+   "match": [
+    "JetBrains Mono"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "jetbrainsmono"
+   }
+  },
+  {
+   "id": "g:ibmplexmono",
+   "name": "IBM Plex Mono",
+   "nameEN": "IBM Plex Mono",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "IBM 고정폭.",
+   "match": [
+    "IBM Plex Mono"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "ibmplexmono"
+   }
+  },
+  {
+   "id": "g:firacode",
+   "name": "Fira Code",
+   "nameEN": "Fira Code",
+   "lang": "la",
+   "source": "google",
+   "page": "https://fonts.google.com/specimen/Fira+Code",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "합자 있는 코딩 고정폭.",
+   "match": [
+    "Fira Code"
+   ],
+   "install": {
+    "kind": "google",
+    "dir": "ofl",
+    "slug": "firacode"
+   }
+  },
+  {
+   "id": "gh:orioncactus/pretendard",
+   "name": "프리텐다드",
+   "nameEN": "Pretendard",
+   "lang": "ko",
+   "source": "github",
+   "page": "https://cactus.tistory.com/306",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "한국 디자이너 사이 사실상 표준 고딕. 굵기 9단계, 영문·숫자까지 균형. 없으면 1순위. (최신 릴리스 v1.3.9)",
+   "match": [
+    "Pretendard"
+   ],
+   "install": {
+    "kind": "github_release",
+    "repo": "orioncactus/pretendard",
+    "asset": "^Pretendard-[\\d.]+\\.zip$"
+   },
+   "preview": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/public/static/Pretendard-Regular.otf"
+  },
+  {
+   "id": "gh:sun-typeface/SUIT",
+   "name": "수트 (SUIT)",
+   "nameEN": "SUIT",
+   "lang": "ko",
+   "source": "github",
+   "page": "https://sun.fo/suit/",
+   "license": "SIL OFL (상업용 무료)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "프리텐다드와 쌍벽인 UI 고딕. 조금 더 각지고 단단하다. (최신 릴리스 v2.0.5)",
+   "match": [
+    "SUIT"
+   ],
+   "install": {
+    "kind": "github_release",
+    "repo": "sun-typeface/SUIT",
+    "asset": "\\.zip$"
+   },
+   "preview": "https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/otf/SUIT-Regular.otf"
+  },
+  {
+   "id": "l:Cafe24 Fonts",
+   "name": "카페24 서체 (써라운드·아네모네·단정해 등)",
+   "nameEN": "Cafe24 Fonts",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://fonts.cafe24.com/",
+   "license": "상업용 무료 (카페24 라이선스)",
+   "tags": [
+    "round",
+    "black",
+    "hand"
+   ],
+   "desc": "둥근 써라운드, 손글씨 아네모네, 명조 결의 단정해까지 한 번에.",
+   "match": [
+    "Cafe24"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:BM Fonts",
+   "name": "배달의민족 서체 (한나·주아·도현·을지로·기랑해랑)",
+   "nameEN": "BM Fonts",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://www.woowahan.com/fonts",
+   "license": "상업용 무료 (우아한형제들)",
+   "tags": [
+    "black",
+    "round",
+    "brush"
+   ],
+   "desc": "간판 글씨를 옮긴 제목체 모음. 을지로체는 붓글씨 결.",
+   "match": [
+    "BM ",
+    "BMJUA",
+    "BMDoHyeon",
+    "BMHANNA",
+    "BMEULJIRO",
+    "배달의민족"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:S-Core Dream",
+   "name": "에스코어 드림",
+   "nameEN": "S-Core Dream",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=%EC%97%90%EC%8A%A4%EC%BD%94%EC%96%B4%20%EB%93%9C%EB%A6%BC",
+   "license": "상업용 무료",
+   "tags": [
+    "sans"
+   ],
+   "desc": "굵기 9단계 고딕. 얇은 1Thin 부터 9Black 까지.",
+   "match": [
+    "S-Core",
+    "SCDream",
+    "에스코어"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:Gmarket Sans",
+   "name": "지마켓 산스",
+   "nameEN": "Gmarket Sans",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://corp.gmarket.com/fonts/",
+   "license": "상업용 무료",
+   "tags": [
+    "sans",
+    "black"
+   ],
+   "desc": "둥근 획의 고딕. Bold 는 제목용으로 인기.",
+   "match": [
+    "Gmarket"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:Hakgyoansim",
+   "name": "학교안심 서체 (바른돋움·둥근미소 등)",
+   "nameEN": "Hakgyoansim",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=%ED%95%99%EA%B5%90%EC%95%88%EC%8B%AC",
+   "license": "상업용 무료 (교육부 공공누리)",
+   "tags": [
+    "round",
+    "hand",
+    "sans"
+   ],
+   "desc": "교육부 배포. 둥근 손글씨 계열이 많아 귀여운 콘텐츠에.",
+   "match": [
+    "Hakgyoansim",
+    "학교안심"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:Gangwon Edu",
+   "name": "강원교육 서체 (모두·현옥샘·새음)",
+   "nameEN": "Gangwon Edu",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=%EA%B0%95%EC%9B%90%EA%B5%90%EC%9C%A1",
+   "license": "상업용 무료",
+   "tags": [
+    "hand",
+    "round"
+   ],
+   "desc": "교육청 배포 손글씨·둥근체.",
+   "match": [
+    "GangwonEdu",
+    "강원교육"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:Paperlogy",
+   "name": "페이퍼로지",
+   "nameEN": "Paperlogy",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=%ED%8E%98%EC%9D%B4%ED%8D%BC%EB%A1%9C%EC%A7%80",
+   "license": "상업용 무료",
+   "tags": [
+    "sans"
+   ],
+   "desc": "종이 질감 인쇄에 맞춘 산세리프. 굵기 9단계.",
+   "match": [
+    "Paperlogy",
+    "페이퍼로지"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:Freesentation",
+   "name": "프리젠테이션",
+   "nameEN": "Freesentation",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=Freesentation",
+   "license": "SIL OFL",
+   "tags": [
+    "sans"
+   ],
+   "desc": "발표 자료용 고딕. 프리텐다드보다 글자폭이 좁다.",
+   "match": [
+    "Freesentation"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:Onglip",
+   "name": "온글잎 서체 (꼭지체·박다현체 등)",
+   "nameEN": "Onglip",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=%EC%98%A8%EA%B8%80%EC%9E%8E",
+   "license": "상업용 무료",
+   "tags": [
+    "hand"
+   ],
+   "desc": "실제 사람 손글씨를 폰트로. 종류가 아주 많다.",
+   "match": [
+    "Ownglyph",
+    "온글잎"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:Jalnan",
+   "name": "여기어때 잘난체",
+   "nameEN": "Jalnan",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=%EC%9E%98%EB%82%9C%EC%B2%B4",
+   "license": "상업용 무료",
+   "tags": [
+    "black",
+    "deco"
+   ],
+   "desc": "굵고 기울어진 제목체. 썸네일·배너.",
+   "match": [
+    "Jalnan",
+    "잘난"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:Tmon Monsori",
+   "name": "티몬 몬소리",
+   "nameEN": "Tmon Monsori",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=%EB%AA%AC%EC%86%8C%EB%A6%AC",
+   "license": "상업용 무료",
+   "tags": [
+    "black"
+   ],
+   "desc": "아주 두꺼운 광고 제목체.",
+   "match": [
+    "Tmon",
+    "몬소리"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:NEXON Lv2 Gothic",
+   "name": "넥슨 Lv2 고딕",
+   "nameEN": "NEXON Lv2 Gothic",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=%EB%84%A5%EC%8A%A8",
+   "license": "상업용 무료",
+   "tags": [
+    "sans",
+    "round"
+   ],
+   "desc": "게임사 고딕. 살짝 둥근 모서리.",
+   "match": [
+    "NEXON",
+    "넥슨"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:CookieRun",
+   "name": "쿠키런 서체",
+   "nameEN": "CookieRun",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=%EC%BF%A0%ED%82%A4%EB%9F%B0",
+   "license": "상업용 무료",
+   "tags": [
+    "round",
+    "black"
+   ],
+   "desc": "둥글고 귀여운 제목체. 아이·게임 콘텐츠.",
+   "match": [
+    "CookieRun",
+    "쿠키런"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:Mapo Fonts",
+   "name": "마포 서체 (꽃섬·배낭여행 등)",
+   "nameEN": "Mapo Fonts",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=%EB%A7%88%ED%8F%AC",
+   "license": "상업용 무료 (마포구)",
+   "tags": [
+    "hand",
+    "brush"
+   ],
+   "desc": "마포구 배포 손글씨·붓글씨.",
+   "match": [
+    "Mapo",
+    "마포"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:Yangjin",
+   "name": "양진체",
+   "nameEN": "Yangjin",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=%EC%96%91%EC%A7%84%EC%B2%B4",
+   "license": "상업용 무료",
+   "tags": [
+    "black",
+    "deco"
+   ],
+   "desc": "굵고 둥근 레트로 제목체.",
+   "match": [
+    "Yangjin",
+    "양진"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:Aggro",
+   "name": "어그로체",
+   "nameEN": "Aggro",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=%EC%96%B4%EA%B7%B8%EB%A1%9C%EC%B2%B4",
+   "license": "상업용 무료",
+   "tags": [
+    "black"
+   ],
+   "desc": "강한 제목체. 유튜브 썸네일 단골.",
+   "match": [
+    "Aggro",
+    "어그로"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:The Jamsil",
+   "name": "더잠실체",
+   "nameEN": "The Jamsil",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=%EB%8D%94%EC%9E%A0%EC%8B%A4",
+   "license": "상업용 무료",
+   "tags": [
+    "sans",
+    "black"
+   ],
+   "desc": "롯데 배포 고딕. 굵기 6단계.",
+   "match": [
+    "Jamsil",
+    "잠실"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:Binggrae",
+   "name": "빙그레체",
+   "nameEN": "Binggrae",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=%EB%B9%99%EA%B7%B8%EB%A0%88",
+   "license": "상업용 무료",
+   "tags": [
+    "round",
+    "hand"
+   ],
+   "desc": "둥근 손글씨 결의 친근한 서체.",
+   "match": [
+    "Binggrae",
+    "빙그레"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:Chosun Ilbo Myungjo",
+   "name": "조선일보명조",
+   "nameEN": "Chosun Ilbo Myungjo",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=%EC%A1%B0%EC%84%A0%EC%9D%BC%EB%B3%B4%EB%AA%85%EC%A1%B0",
+   "license": "상업용 무료",
+   "tags": [
+    "serif"
+   ],
+   "desc": "신문 본문 명조. 긴 글에 안정적.",
+   "match": [
+    "Chosun",
+    "조선일보"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:KOTRA Hope",
+   "name": "코트라 희망체",
+   "nameEN": "KOTRA Hope",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=%EC%BD%94%ED%8A%B8%EB%9D%BC",
+   "license": "상업용 무료",
+   "tags": [
+    "black",
+    "deco"
+   ],
+   "desc": "굵은 제목용 손글씨체.",
+   "match": [
+    "KOTRA",
+    "코트라"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:Subak Hwa",
+   "name": "수박화체 (상상토끼)",
+   "nameEN": "Subak Hwa",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/index?search=%EC%83%81%EC%83%81%ED%86%A0%EB%81%BC",
+   "license": "상업용 무료",
+   "tags": [
+    "hand",
+    "round"
+   ],
+   "desc": "상상토끼 손글씨 시리즈.",
+   "match": [
+    "SangSang",
+    "상상토끼"
+   ],
+   "install": null
+  },
+  {
+   "id": "l:Noonnu Popular",
+   "name": "Y클로버 / 땅스부대찌개 등 눈누 인기",
+   "nameEN": "Noonnu Popular",
+   "lang": "ko",
+   "source": "link",
+   "page": "https://noonnu.cc/",
+   "license": "폰트마다 다름 — 페이지에서 확인",
+   "tags": [
+    "hand",
+    "deco"
+   ],
+   "desc": "눈누에서 인기순으로 훑어보기.",
+   "match": [],
+   "install": null
+  },
+  {
+   "id": "a:proxima-nova",
+   "name": "Proxima Nova",
+   "nameEN": "Proxima Nova",
+   "lang": "la",
+   "source": "adobe",
+   "page": "https://fonts.adobe.com/fonts/proxima-nova",
+   "license": "Adobe Fonts (Creative Cloud 구독에 포함, 상업용 가능)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "브랜딩 단골 기하학 고딕. 어도비 폰트 1위급.",
+   "match": [
+    "Proxima Nova",
+    "Proxima Nova"
+   ],
+   "install": null
+  },
+  {
+   "id": "a:futura-pt",
+   "name": "Futura PT",
+   "nameEN": "Futura PT",
+   "lang": "la",
+   "source": "adobe",
+   "page": "https://fonts.adobe.com/fonts/futura-pt",
+   "license": "Adobe Fonts (Creative Cloud 구독에 포함, 상업용 가능)",
+   "tags": [
+    "sans",
+    "deco"
+   ],
+   "desc": "기하학 고딕의 원조. 패션·브랜딩.",
+   "match": [
+    "Futura PT",
+    "Futura PT"
+   ],
+   "install": null
+  },
+  {
+   "id": "a:acumin",
+   "name": "Acumin",
+   "nameEN": "Acumin",
+   "lang": "la",
+   "source": "adobe",
+   "page": "https://fonts.adobe.com/fonts/acumin",
+   "license": "Adobe Fonts (Creative Cloud 구독에 포함, 상업용 가능)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "어도비의 중립 그로테스크. 굵기·폭 90종.",
+   "match": [
+    "Acumin",
+    "Acumin"
+   ],
+   "install": null
+  },
+  {
+   "id": "a:neue-haas-grotesk",
+   "name": "Neue Haas Grotesk",
+   "nameEN": "Neue Haas Grotesk",
+   "lang": "la",
+   "source": "adobe",
+   "page": "https://fonts.adobe.com/fonts/neue-haas-grotesk",
+   "license": "Adobe Fonts (Creative Cloud 구독에 포함, 상업용 가능)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "헬베티카의 원형. 가장 정석.",
+   "match": [
+    "Neue Haas Grotesk",
+    "Neue Haas Grotesk"
+   ],
+   "install": null
+  },
+  {
+   "id": "a:brandon-grotesque",
+   "name": "Brandon Grotesque",
+   "nameEN": "Brandon Grotesque",
+   "lang": "la",
+   "source": "adobe",
+   "page": "https://fonts.adobe.com/fonts/brandon-grotesque",
+   "license": "Adobe Fonts (Creative Cloud 구독에 포함, 상업용 가능)",
+   "tags": [
+    "sans",
+    "round"
+   ],
+   "desc": "둥근 기하학 고딕. 카페·라이프스타일 브랜드.",
+   "match": [
+    "Brandon Grotesque",
+    "Brandon Grotesque"
+   ],
+   "install": null
+  },
+  {
+   "id": "a:sofia",
+   "name": "Sofia Pro",
+   "nameEN": "Sofia Pro",
+   "lang": "la",
+   "source": "adobe",
+   "page": "https://fonts.adobe.com/fonts/sofia",
+   "license": "Adobe Fonts (Creative Cloud 구독에 포함, 상업용 가능)",
+   "tags": [
+    "sans",
+    "round"
+   ],
+   "desc": "부드러운 둥근 고딕.",
+   "match": [
+    "Sofia Pro",
+    "Sofia Pro"
+   ],
+   "install": null
+  },
+  {
+   "id": "a:garamond-premier",
+   "name": "Garamond Premier Pro",
+   "nameEN": "Garamond Premier Pro",
+   "lang": "la",
+   "source": "adobe",
+   "page": "https://fonts.adobe.com/fonts/garamond-premier",
+   "license": "Adobe Fonts (Creative Cloud 구독에 포함, 상업용 가능)",
+   "tags": [
+    "serif"
+   ],
+   "desc": "어도비 가라몬드. 책·인쇄 본문.",
+   "match": [
+    "Garamond Premier Pro",
+    "Garamond Premier Pro"
+   ],
+   "install": null
+  },
+  {
+   "id": "a:adobe-caslon",
+   "name": "Adobe Caslon Pro",
+   "nameEN": "Adobe Caslon Pro",
+   "lang": "la",
+   "source": "adobe",
+   "page": "https://fonts.adobe.com/fonts/adobe-caslon",
+   "license": "Adobe Fonts (Creative Cloud 구독에 포함, 상업용 가능)",
+   "tags": [
+    "serif"
+   ],
+   "desc": "클래식 영문 세리프.",
+   "match": [
+    "Adobe Caslon Pro",
+    "Adobe Caslon Pro"
+   ],
+   "install": null
+  },
+  {
+   "id": "a:minion",
+   "name": "Minion Pro",
+   "nameEN": "Minion Pro",
+   "lang": "la",
+   "source": "adobe",
+   "page": "https://fonts.adobe.com/fonts/minion",
+   "license": "Adobe Fonts (Creative Cloud 구독에 포함, 상업용 가능)",
+   "tags": [
+    "serif"
+   ],
+   "desc": "인쇄 본문 표준 세리프.",
+   "match": [
+    "Minion Pro",
+    "Minion Pro"
+   ],
+   "install": null
+  },
+  {
+   "id": "a:trajan",
+   "name": "Trajan Pro 3",
+   "nameEN": "Trajan Pro 3",
+   "lang": "la",
+   "source": "adobe",
+   "page": "https://fonts.adobe.com/fonts/trajan",
+   "license": "Adobe Fonts (Creative Cloud 구독에 포함, 상업용 가능)",
+   "tags": [
+    "serif",
+    "deco",
+    "wide"
+   ],
+   "desc": "영화 포스터 대문자 세리프.",
+   "match": [
+    "Trajan Pro 3",
+    "Trajan Pro 3"
+   ],
+   "install": null
+  },
+  {
+   "id": "a:mrs-eaves",
+   "name": "Mrs Eaves",
+   "nameEN": "Mrs Eaves",
+   "lang": "la",
+   "source": "adobe",
+   "page": "https://fonts.adobe.com/fonts/mrs-eaves",
+   "license": "Adobe Fonts (Creative Cloud 구독에 포함, 상업용 가능)",
+   "tags": [
+    "serif",
+    "deco"
+   ],
+   "desc": "우아한 바스커빌 변주. 초대장·패키지.",
+   "match": [
+    "Mrs Eaves",
+    "Mrs Eaves"
+   ],
+   "install": null
+  },
+  {
+   "id": "a:bickham-script",
+   "name": "Bickham Script Pro 3",
+   "nameEN": "Bickham Script Pro 3",
+   "lang": "la",
+   "source": "adobe",
+   "page": "https://fonts.adobe.com/fonts/bickham-script",
+   "license": "Adobe Fonts (Creative Cloud 구독에 포함, 상업용 가능)",
+   "tags": [
+    "brush",
+    "thin"
+   ],
+   "desc": "극도로 화려한 동판 스크립트.",
+   "match": [
+    "Bickham Script Pro 3",
+    "Bickham Script Pro 3"
+   ],
+   "install": null
+  },
+  {
+   "id": "a:myriad",
+   "name": "Myriad Pro",
+   "nameEN": "Myriad Pro",
+   "lang": "la",
+   "source": "adobe",
+   "page": "https://fonts.adobe.com/fonts/myriad",
+   "license": "Adobe Fonts (Creative Cloud 구독에 포함, 상업용 가능)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "어도비 기본 고딕. 안정적.",
+   "match": [
+    "Myriad Pro",
+    "Myriad Pro"
+   ],
+   "install": null
+  },
+  {
+   "id": "a:din-2014",
+   "name": "DIN 2014",
+   "nameEN": "DIN 2014",
+   "lang": "la",
+   "source": "adobe",
+   "page": "https://fonts.adobe.com/fonts/din-2014",
+   "license": "Adobe Fonts (Creative Cloud 구독에 포함, 상업용 가능)",
+   "tags": [
+    "sans",
+    "narrow"
+   ],
+   "desc": "독일 공업 규격 고딕. 숫자·표지판.",
+   "match": [
+    "DIN 2014",
+    "DIN 2014"
+   ],
+   "install": null
+  },
+  {
+   "id": "a:source-han-sans-korean",
+   "name": "본고딕 (Source Han Sans Korean)",
+   "nameEN": "본고딕 (Source Han Sans Korean)",
+   "lang": "ko",
+   "source": "adobe",
+   "page": "https://fonts.adobe.com/fonts/source-han-sans-korean",
+   "license": "Adobe Fonts (Creative Cloud 구독에 포함, 상업용 가능)",
+   "tags": [
+    "sans"
+   ],
+   "desc": "어도비판 본고딕. 구글판과 같은 글꼴.",
+   "match": [
+    "본고딕",
+    "Source Han Sans Korean"
+   ],
+   "install": null
+  },
+  {
+   "id": "a:source-han-serif-korean",
+   "name": "본명조 (Source Han Serif Korean)",
+   "nameEN": "본명조 (Source Han Serif Korean)",
+   "lang": "ko",
+   "source": "adobe",
+   "page": "https://fonts.adobe.com/fonts/source-han-serif-korean",
+   "license": "Adobe Fonts (Creative Cloud 구독에 포함, 상업용 가능)",
+   "tags": [
+    "serif"
+   ],
+   "desc": "어도비판 본명조.",
+   "match": [
+    "본명조",
+    "Source Han Serif Korean"
+   ],
+   "install": null
+  }
+ ]
+}
