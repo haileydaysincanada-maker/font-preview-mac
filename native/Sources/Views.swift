@@ -194,6 +194,7 @@ struct FontList: View {
             }
         }
         .background(store.bg)
+        .environment(\.colorScheme, store.bgIsDark ? .dark : .light)
     }
 }
 
@@ -239,7 +240,7 @@ struct FontRow: View {
                     Image(systemName: "star.fill").font(.system(size: 14)).foregroundColor(store.isFav(item) ? Color(red: 0.94, green: 0.71, blue: 0) : Color.primary.opacity(0.18))
                 }.buttonStyle(.plain).help(T("즐겨찾기", "Favorite"))
             }
-            .foregroundColor(Color(nsColor: .labelColor))
+            .foregroundColor(Color.primary)
             Text(store.shownSample(for: item))
                 .font(store.fontCache.font(item, store.size))
                 .foregroundColor(store.fg)
@@ -253,7 +254,7 @@ struct FontRow: View {
     func chip(_ s: String, ghost: Bool = false, warn: Bool = false, manual: Bool = false) -> some View {
         Text(s).font(.system(size: 11)).lineLimit(1)
             .padding(.horizontal, 8).padding(.vertical, 2)
-            .foregroundColor(warn ? .orange : ghost ? .secondary : Color(nsColor: .labelColor))
+            .foregroundColor(warn ? .orange : ghost ? .secondary : Color.primary)
             .overlay(RoundedRectangle(cornerRadius: 11).strokeBorder(manual ? Color.accentColor : warn ? Color.orange : Color.primary.opacity(0.2), style: StrokeStyle(lineWidth: 1, dash: (ghost || manual) ? [3, 2] : [])))
     }
 }
@@ -282,8 +283,8 @@ struct TagEditor: View {
     func toggleChip(_ l: String, on: Bool, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Text(l).font(.system(size: 11)).padding(.horizontal, 9).padding(.vertical, 3)
-                .background(on ? Color(nsColor: .labelColor) : Color.clear)
-                .foregroundColor(on ? Color(nsColor: .windowBackgroundColor) : Color(nsColor: .labelColor))
+                .background(on ? Color.primary : Color.clear)
+                .foregroundColor(on ? Color(nsColor: .windowBackgroundColor) : Color.primary)
                 .overlay(RoundedRectangle(cornerRadius: 11).strokeBorder(Color.primary.opacity(on ? 0 : 0.25)))
                 .cornerRadius(11)
         }.buttonStyle(.plain)
@@ -307,6 +308,7 @@ struct RecommendList: View {
             }
         }
         .background(store.bg)
+        .environment(\.colorScheme, store.bgIsDark ? .dark : .light)
     }
 }
 

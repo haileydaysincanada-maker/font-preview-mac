@@ -54,6 +54,11 @@ final class Store: ObservableObject {
     @Published var group = true { didSet { applyFilters(); saveUserSoon() } }
     @Published var fg: Color = Color(hex: "#111111") { didSet { saveUserSoon() } }
     @Published var bg: Color = .white { didSet { saveUserSoon() } }
+    /// 미리보기 배경이 어두우면 목록의 이름·분류 글자를 밝게(다크 스킴) 그린다
+    var bgIsDark: Bool {
+        let c = NSColor(bg).usingColorSpace(.sRGB) ?? .white
+        return (0.2126 * c.redComponent + 0.7152 * c.greenComponent + 0.0722 * c.blueComponent) < 0.5
+    }
     @Published var nav = "all" { didSet { applyFilters(); saveUserSoon() } }
     @Published var lang = "" { didSet { applyFilters(); saveUserSoon() } }   // "" 전체 / "ko" 한글 / "la" 영문 전용
     @Published var uiLang: UILang = UILang.systemDefault() { didSet { UILang.current = uiLang; applyFilters(); saveUserSoon() } }

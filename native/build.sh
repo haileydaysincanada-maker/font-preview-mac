@@ -9,7 +9,7 @@ SDK="$(xcrun --show-sdk-path)"
 BIN="$OUT/Contents/MacOS"
 RES="$OUT/Contents/Resources"
 # 빌드 번호: 빌드마다 1씩 증가 (native/BUILD_NUMBER)
-VERSION="1.2"
+VERSION="1.2.1"
 AUTHOR="Hailey (haileydayz)"
 CONTACT="hello@haileydayz.com"
 BN_FILE="$HERE/BUILD_NUMBER"
