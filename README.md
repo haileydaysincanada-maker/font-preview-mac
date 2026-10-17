@@ -4,7 +4,7 @@ A native macOS font previewer in the spirit of NexusFont on Windows: every insta
 
 - SwiftUI, macOS 13+, no Xcode needed: `native/build.sh` builds `폰트 미리보기.app` with the Command Line Tools' `swiftc` in under a minute.
 - Shape classification is measured from rendered glyphs (stroke width, serif feet, corner roundness, baseline wobble, aspect ratio) with name hints; mistakes are one click to fix and remembered.
-- Download the prebuilt app from **Releases** (unsigned — on first launch right-click → Open).
+- Repo: https://github.com/haileydaysincanada-maker/font-preview-mac — download the prebuilt app from **Releases** (unsigned — on first launch right-click → Open).
 - Korean UI. Built by a graphic designer together with an AI pair programmer (Claude); the Korean notes below are the working documentation.
 
 License: MIT. Font catalog links point to each font's own distributor and license — no font files are bundled.

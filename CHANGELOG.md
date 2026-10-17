@@ -1,5 +1,9 @@
 # 폰트뷰어 변경 이력
 
+## 2026-10-16 (밤 3) — GitHub 공개
+
+- https://github.com/haileydaysincanada-maker/font-preview-mac (public, MIT). 이 폴더가 git 저장소(main). `.app`·zip·linkedin 초안·.DS_Store 는 .gitignore. 릴리스 v1.1 에 `FontPreview-1.1.zip`(빌드 2, 미공증 → 우클릭 열기). 커밋 이메일은 hello@haileydayz.com(로컬 설정). 빌드 후 배포 절차: `native/build.sh` → `ditto -c -k --keepParent "폰트 미리보기.app" FontPreview-<ver>.zip` → `gh release create v<ver> <zip>` → 커밋·푸시.
+
 ## 2026-10-16 (밤 2) — 버전·빌드 번호·제작자 표기
 
 - 문의 메일 `CONTACT="hello@haileydayz.com"`(build.sh) → 사이드바 아래 「문의 · 주소」 링크(mailto, 제목에 버전·빌드 자동), 정보 창 저작권 줄, 도움말 메뉴 「문의 메일 보내기」·「사용법 (README)」. 비즈니스 주소를 쓴 이유 = 대외 표기엔 지메일 금지 규칙.
