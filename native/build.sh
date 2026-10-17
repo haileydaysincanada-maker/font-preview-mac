@@ -60,5 +60,9 @@ PLIST
 echo -n 'APPL????' > "$OUT/Contents/PkgInfo"
 [ -f "$HERE/AppIcon.icns" ] && cp "$HERE/AppIcon.icns" "$RES/AppIcon.icns"
 cp "$HERE/catalog.json" "$RES/catalog.json"
-codesign --force --sign - "$OUT" >/dev/null 2>&1 || true
+# 애드혹 서명. 폴더 xattr 찌꺼기(FinderInfo 등)가 있으면 codesign 이 거부하므로 먼저 지운다.
+# 서명이 실패한 채로 배포하면 애플 실리콘 맥에서 «손상되었기 때문에 열 수 없습니다»가 뜬다 → 실패는 숨기지 않는다.
+xattr -cr "$OUT"
+codesign --force --sign - "$OUT"
+codesign --verify --deep --strict "$OUT" || { echo "❌ 서명 검증 실패 — 배포하지 말 것" >&2; exit 1; }
 echo "✅ $OUT  (v$VERSION 빌드 $BUILD, $BUILT_AT)"

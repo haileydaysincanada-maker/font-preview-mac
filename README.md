@@ -9,7 +9,10 @@ A native macOS font previewer in the spirit of NexusFont on Windows: every insta
 ## Install
 
 1. Download `FontPreview-<version>.zip` from [Releases](https://github.com/haileydaysincanada-maker/font-preview-mac/releases), unzip, move the app to Applications.
-2. First launch: **right-click → Open** (the app is not notarized; macOS shows an "unidentified developer" warning once).
+2. First launch (the app is ad-hoc signed but not notarized, so macOS warns once):
+   - **macOS 15 Sequoia or later**: double-click, close the warning, then open **System Settings → Privacy & Security**, scroll down and click **Open Anyway** (the button stays for about an hour), enter your password, and click **Open**.
+   - **macOS 13–14**: **right-click → Open**, then **Open**.
+   - 처음 열 때(한국어): macOS 15 이상은 시스템 설정 → 개인정보 보호 및 보안 → 「그래도 열기」, macOS 13·14는 우클릭 → 「열기」. 한 번만 하면 다음부터는 그냥 열린다.
 3. macOS 13 Ventura or later. Universal binary (Apple Silicon + Intel).
 
 Or build it yourself with only the Command Line Tools (no Xcode): `native/build.sh` → `폰트 미리보기.app` in about a minute.
