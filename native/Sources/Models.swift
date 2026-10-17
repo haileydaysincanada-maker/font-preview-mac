@@ -22,10 +22,10 @@ struct FontItem: Identifiable, Hashable {
     var familyKey: String { folderID.map { family + "@" + $0 } ?? family }
     var sourceLabel: String {
         switch source {
-        case .system: return "시스템"
-        case .user: return path.hasPrefix("/Library") ? "공용" : "사용자"
+        case .system: return T("시스템", "System")
+        case .user: return path.hasPrefix("/Library") ? T("공용", "Shared") : T("사용자", "User")
         case .adobe: return "Adobe Fonts"
-        case .folder: return "폴더"
+        case .folder: return T("폴더", "Folder")
         }
     }
     func ctFont(_ size: CGFloat) -> CTFont { CTFontCreateWithFontDescriptor(descriptor, size, nil) }
@@ -66,6 +66,7 @@ struct UIState: Codable {
     var bg: String? = nil
     var nav: String? = nil
     var lang: String? = nil
+    var ui: String? = nil
 }
 
 struct UserData: Codable {
@@ -101,6 +102,17 @@ enum Cat {
         for (k, l) in weights { d["w:" + k] = l }
         return d
     }()
+    static let labelEN: [String: String] = [
+        "black": "Bold display", "sans": "Sans-serif", "serif": "Serif", "round": "Rounded · cute", "hand": "Handwriting", "brush": "Brush · calligraphy",
+        "deco": "Decorative", "wide": "Wide (extended)", "narrow": "Narrow (condensed)",
+        "w:thin": "Thin", "w:regular": "Regular", "w:bold": "Bold", "w:black": "Black",
+        "thin": "Thin", "regular": "Regular", "bold": "Bold",
+    ]
+    /// 분류·굵기 이름 (화면 언어 반영). 카탈로그 태그 "thin"/"bold" 도 받는다.
+    static func name(_ k: String) -> String {
+        if UILang.current == .en { return labelEN[k] ?? labelEN["w:" + k] ?? k }
+        return label[k] ?? label["w:" + k] ?? k
+    }
 }
 
 // MARK: - 자동 분류 규칙 (웹판 detectAuto 와 동일한 기준값)

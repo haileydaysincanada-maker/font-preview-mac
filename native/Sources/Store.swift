@@ -56,6 +56,7 @@ final class Store: ObservableObject {
     @Published var bg: Color = .white { didSet { saveUserSoon() } }
     @Published var nav = "all" { didSet { applyFilters(); saveUserSoon() } }
     @Published var lang = "" { didSet { applyFilters(); saveUserSoon() } }   // "" 전체 / "ko" 한글 / "la" 영문 전용
+    @Published var uiLang: UILang = UILang.systemDefault() { didSet { UILang.current = uiLang; applyFilters(); saveUserSoon() } }
     // 추천
     @Published private(set) var catalog: [CatalogItem] = []
     @Published private(set) var recs: [Recommendation] = []
@@ -152,7 +153,7 @@ final class Store: ObservableObject {
         if lang == "la" && c.lang != "la" { return false }
         if !weight.isEmpty && !c.normTags.contains("w:" + weight) && !(weight == "black" && c.tags.contains("black")) { return false }
         if !terms.isEmpty {
-            let hay = (c.name + " " + c.nameEN + " " + c.desc + " " + c.tags.compactMap { Cat.label[$0] ?? Cat.label["w:" + $0] }.joined(separator: " ") + " " + c.sourceLabel).lowercased()
+            let hay = (c.name + " " + c.nameEN + " " + c.desc + " " + (c.tags.map { Cat.name($0) } + c.tags.compactMap { Cat.label[$0] ?? Cat.label["w:" + $0] } + [c.descEN ?? ""]).joined(separator: " ") + " " + c.sourceLabel).lowercased()
             if !terms.allSatisfy({ hay.contains($0) }) { return false }
         }
         return true
@@ -176,8 +177,8 @@ final class Store: ObservableObject {
             if score <= 0 { continue }
             score += (c.lang == "ko" ? t.koShare : 1 - t.koShare) * 0.5
             hits.sort { $0.1 > $1.1 }
-            let why = hits.prefix(2).map { "\(Cat.label[$0.0] ?? $0.0) \(Int(($0.1 * Double(t.count)).rounded()))개" }.joined(separator: " · ")
-            out.append(Recommendation(item: c, score: score, reason: "별·세트에 담은 폰트 \(t.count)개 중 " + why + " 와 같은 결"))
+            let why = hits.prefix(2).map { T("\(Cat.name($0.0)) \(Int(($0.1 * Double(t.count)).rounded()))개", "\(Int(($0.1 * Double(t.count)).rounded())) \(Cat.name($0.0).lowercased())") }.joined(separator: " · ")
+            out.append(Recommendation(item: c, score: score, reason: T("별·세트에 담은 폰트 \(t.count)개 중 " + why + " 와 같은 결", "like \(why) of the \(t.count) fonts you starred or set")))
         }
         return out.sorted { $0.score > $1.score }
     }
@@ -190,10 +191,10 @@ final class Store: ObservableObject {
                 try? await Task.sleep(nanoseconds: 800_000_000)
                 installing.remove(c.id)
                 reloadFonts()
-                showToast("\(c.name) 설치됨 (\(files.count)개 파일 → ~/Library/Fonts)")
+                showToast(T("\(c.name) 설치됨 (\(files.count)개 파일 → ~/Library/Fonts)", "\(c.nameEN) installed (\(files.count) files → ~/Library/Fonts)"))
             } catch {
                 installing.remove(c.id)
-                showToast("설치 실패: " + error.localizedDescription)
+                showToast(T("설치 실패: ", "Install failed: ") + error.localizedDescription)
             }
         }
     }
@@ -242,8 +243,8 @@ final class Store: ObservableObject {
     func isManual(_ item: FontItem) -> Bool { if let m = user.tags[item.id] { return !m.on.isEmpty || !m.off.isEmpty }; return false }
     func tagSummary(_ item: FontItem) -> String {
         let t = tagsOf(item)
-        var parts = Cat.all.filter { t.contains($0.0) }.map { $0.1 }
-        if let w = t.first(where: { $0.hasPrefix("w:") }), w != "w:regular", !(w == "w:black" && t.contains("black")) { parts.append(Cat.label[w] ?? w) }
+        var parts = Cat.all.filter { t.contains($0.0) }.map { Cat.name($0.0) }
+        if let w = t.first(where: { $0.hasPrefix("w:") }), w != "w:regular", !(w == "w:black" && t.contains("black")) { parts.append(Cat.name(w)) }
         return parts.joined(separator: " · ")
     }
     func toggleTag(_ item: FontItem, _ id: String) {
@@ -291,9 +292,10 @@ final class Store: ObservableObject {
     }
     var phrases: [String] { user.phrases }
     var sampleSaved: Bool { user.phrases.contains(sample.trimmingCharacters(in: .whitespaces)) }
+    func tagSummaryLocalized(_ item: FontItem) -> String { tagSummary(item) }
     func togglePhraseSaved() {
         let s = sample.trimmingCharacters(in: .whitespaces); guard !s.isEmpty else { return }
-        if let i = user.phrases.firstIndex(of: s) { user.phrases.remove(at: i); showToast("문구 삭제") } else { user.phrases.insert(s, at: 0); showToast("문구 저장") }
+        if let i = user.phrases.firstIndex(of: s) { user.phrases.remove(at: i); showToast(T("문구 삭제", "Phrase removed")) } else { user.phrases.insert(s, at: 0); showToast(T("문구 저장", "Phrase saved")) }
         saveUserSoon()
     }
 
@@ -315,19 +317,19 @@ final class Store: ObservableObject {
         folders.append(url); saveFolders()
         reloadFonts()
         nav = "folder:" + shortHash(url.path)
-        showToast("폴더 등록: \(url.lastPathComponent)")
+        showToast(T("폴더 등록: ", "Folder added: ") + url.lastPathComponent)
     }
     func removeFolder(_ fid: String) {
         folders.removeAll { shortHash($0.path) == fid }; saveFolders()
         if nav == "folder:" + fid { nav = "all" }
         reloadFonts()
     }
-    func folderName(_ fid: String) -> String { folders.first { shortHash($0.path) == fid }?.lastPathComponent ?? "폴더" }
+    func folderName(_ fid: String) -> String { folders.first { shortHash($0.path) == fid }?.lastPathComponent ?? T("폴더", "Folder") }
     func folderPath(_ fid: String) -> String { folders.first { shortHash($0.path) == fid }?.path ?? "" }
     func pickFolder() {
         let p = NSOpenPanel()
         p.canChooseDirectories = true; p.canChooseFiles = false; p.allowsMultipleSelection = true
-        p.prompt = "이 폴더 보기"; p.message = "미리볼 폰트 폴더를 고르세요 (설치되지 않아요)"
+        p.prompt = T("이 폴더 보기", "Preview this folder"); p.message = T("미리볼 폰트 폴더를 고르세요 (설치되지 않아요)", "Choose a folder of fonts to preview (nothing gets installed)")
         if p.runModal() == .OK { for u in p.urls { addFolder(u) } }
     }
 
@@ -421,29 +423,29 @@ final class Store: ObservableObject {
 
     var stripTitle: String {
         switch nav {
-        case "all": return "전체 설치 폰트"
-        case "ko": return "한글 폰트"
-        case "laOnly": return "영문 전용 폰트"
-        case "recent": return "최근 설치한 폰트"
-        case "fav": return "즐겨찾기"
-        case "rec:all": return "추천 폰트"
-        case "rec:taste": return "내 취향 추천"
+        case "all": return T("전체 설치 폰트", "All installed fonts")
+        case "ko": return T("한글 폰트", "Korean fonts")
+        case "laOnly": return T("영문 전용 폰트", "Latin-only fonts")
+        case "recent": return T("최근 설치한 폰트", "Recently installed")
+        case "fav": return T("즐겨찾기", "Favorites")
+        case "rec:all": return T("추천 폰트", "Worth installing")
+        case "rec:taste": return T("내 취향 추천", "For my taste")
         default:
-            if nav.hasPrefix("cat:") { return Cat.label[String(nav.dropFirst(4))] ?? "" }
+            if nav.hasPrefix("cat:") { return Cat.name(String(nav.dropFirst(4))) }
             if nav.hasPrefix("set:") { return String(nav.dropFirst(4)) }
             if nav.hasPrefix("folder:") { return folderName(String(nav.dropFirst(7))) }
             return ""
         }
     }
     var stripDesc: String {
-        if nav == "rec:all" { return "\(recs.count)개 · 설치하면 좋을 무료·구독 폰트 — 라이선스는 꼭 확인" + (lang == "ko" ? " · 한글만" : lang == "la" ? " · 영문만" : "") }
-        if nav == "rec:taste" { return tasteCount < 3 ? "별(★)이나 세트에 폰트를 3개 이상 담으면 그 결로 골라드려요 (지금 \(tasteCount)개)" : "\(recs.count)개 · 별·세트에 담은 \(tasteCount)개의 생김새와 비슷한 순" }
-        var d = "\(visible.count.formatted())개 · \(visibleFamilies.formatted())개 패밀리"
-        if lang == "ko" { d += " · 한글 되는 것만" } else if lang == "la" { d += " · 영문 전용만" }
-        if nav.hasPrefix("cat:") { d += " · 생김새로 자동 분류 — 틀린 건 분류 표시를 눌러 고치면 돼요" }
-        else if nav.hasPrefix("set:") { d += " · 폰트 줄의 「+ 세트」로 넣고 빼요" }
+        if nav == "rec:all" { return T("\(recs.count)개 · 설치하면 좋을 무료·구독 폰트 — 라이선스는 꼭 확인", "\(recs.count) · free or subscription fonts worth installing — always check the license") + (lang == "ko" ? T(" · 한글만", " · Korean only") : lang == "la" ? T(" · 영문만", " · Latin only") : "") }
+        if nav == "rec:taste" { return tasteCount < 3 ? T("별(★)이나 세트에 폰트를 3개 이상 담으면 그 결로 골라드려요 (지금 \(tasteCount)개)", "Star or add at least 3 fonts to a set and I'll pick in that style (now \(tasteCount))") : T("\(recs.count)개 · 별·세트에 담은 \(tasteCount)개의 생김새와 비슷한 순", "\(recs.count) · closest in look to the \(tasteCount) fonts you starred or set") }
+        var d = T("\(visible.count.formatted())개 · \(visibleFamilies.formatted())개 패밀리", "\(visible.count.formatted()) fonts · \(visibleFamilies.formatted()) families")
+        if lang == "ko" { d += T(" · 한글 되는 것만", " · Korean-capable only") } else if lang == "la" { d += T(" · 영문 전용만", " · Latin-only") }
+        if nav.hasPrefix("cat:") { d += T(" · 생김새로 자동 분류 — 틀린 건 분류 표시를 눌러 고치면 돼요", " · classified by look — click a font's label to fix it") }
+        else if nav.hasPrefix("set:") { d += T(" · 폰트 줄의 「+ 세트」로 넣고 빼요", " · add or remove with “+ Set” on a font row") }
         else if nav.hasPrefix("folder:") { d += " · " + folderPath(String(nav.dropFirst(7))) }
-        else if nav == "recent" { d += " · 최근 30일 안에 설치된 파일" }
+        else if nav == "recent" { d += T(" · 최근 30일 안에 설치된 파일", " · files installed in the last 30 days") }
         return d
     }
 
@@ -471,13 +473,13 @@ final class Store: ObservableObject {
     }
     private func absorb(_ batch: [(String, Profile)], done: Int, total: Int) {
         for (id, p) in batch { profiles[id] = p; if let f = byID[id] { recomputeTag(f) } }
-        progress = done < total ? "생김새 분석 중 \(done)/\(total)" : ""
+        progress = done < total ? T("생김새 분석 중 \(done)/\(total)", "Analyzing looks \(done)/\(total)") : ""
         applyFilters()
         if done >= total {
             try? FileManager.default.createDirectory(at: CONF_DIR, withIntermediateDirectories: true)
             try? JSONEncoder().encode(profiles).write(to: PROFILES_JSON)
             let err = fonts.filter { profiles[$0.id]?.err == 1 }.count
-            if err > 0 { progress = "불러오지 못한 폰트 \(err)개" }
+            if err > 0 { progress = T("불러오지 못한 폰트 \(err)개", "\(err) fonts could not be loaded") }
         }
     }
 
@@ -494,7 +496,9 @@ final class Store: ObservableObject {
             if let v = s.bg { bg = Color(hex: v) }
             if let v = s.nav { nav = v }
             if let v = s.lang { lang = v }
+            if let v = s.ui, let l = UILang(rawValue: v) { uiLang = l }
         }
+        UILang.current = uiLang
     }
     func saveUserSoon() {
         saveTask?.cancel()
@@ -506,7 +510,7 @@ final class Store: ObservableObject {
     }
     func saveUserNow() {
         var u = user
-        u.state2 = UIState(sample: sample, size: size, q: "", weight: weight, sort: sort, group: group, fg: fg.hexString, bg: bg.hexString, nav: nav, lang: lang)
+        u.state2 = UIState(sample: sample, size: size, q: "", weight: weight, sort: sort, group: group, fg: fg.hexString, bg: bg.hexString, nav: nav, lang: lang, ui: uiLang.rawValue)
         try? FileManager.default.createDirectory(at: CONF_DIR, withIntermediateDirectories: true)
         let enc = JSONEncoder(); enc.outputFormatting = [.sortedKeys]
         if let d = try? enc.encode(u) { try? d.write(to: USER_JSON, options: .atomic) }
@@ -522,7 +526,7 @@ final class Store: ObservableObject {
     }
     func ask(_ title: String, _ message: String = "", initial: String = "") -> String? {
         let a = NSAlert(); a.messageText = title; a.informativeText = message
-        a.addButton(withTitle: "확인"); a.addButton(withTitle: "취소")
+        a.addButton(withTitle: T("확인", "OK")); a.addButton(withTitle: T("취소", "Cancel"))
         let tf = NSTextField(frame: NSRect(x: 0, y: 0, width: 260, height: 24)); tf.stringValue = initial
         a.accessoryView = tf; a.window.initialFirstResponder = tf
         guard a.runModal() == .alertFirstButtonReturn else { return nil }
@@ -531,7 +535,7 @@ final class Store: ObservableObject {
     }
     func confirm(_ title: String, _ message: String = "") -> Bool {
         let a = NSAlert(); a.messageText = title; a.informativeText = message; a.alertStyle = .warning
-        a.addButton(withTitle: "삭제"); a.addButton(withTitle: "취소")
+        a.addButton(withTitle: T("삭제", "Delete")); a.addButton(withTitle: T("취소", "Cancel"))
         return a.runModal() == .alertFirstButtonReturn
     }
 }

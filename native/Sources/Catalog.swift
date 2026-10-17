@@ -24,15 +24,24 @@ struct CatalogItem: Codable, Identifiable, Hashable {
     let match: [String]
     let install: CatalogInstall?
     let preview: String?      // 미리보기용 단일 파일 직링크 (GitHub 배포분)
+    let descEN: String?
+
+    /// 화면 언어에 맞는 이름: 영어 UI 면 영문명을 앞에, 한글명은 뒤에
+    var displayName: String { UILang.current == .en ? nameEN : name }
+    var displaySub: String? {
+        if UILang.current == .en { return (name != nameEN && !name.contains(nameEN)) ? name : nil }
+        return (nameEN != name && !name.contains(nameEN)) ? nameEN : nil
+    }
+    var displayDesc: String { UILang.current == .en ? (descEN ?? desc) : desc }
 
     var previewable: Bool { source == "google" || preview != nil }
 
     var sourceLabel: String {
         switch source {
         case "google": return "Google Fonts"
-        case "github": return "GitHub 배포"
+        case "github": return T("GitHub 배포", "GitHub release")
         case "adobe": return "Adobe Fonts"
-        default: return "배포처"
+        default: return T("배포처", "Distributor")
         }
     }
     var canInstall: Bool { install != nil }
@@ -63,10 +72,10 @@ enum InstallError: LocalizedError {
     case http(Int, String), noAsset, noFiles, unzip
     var errorDescription: String? {
         switch self {
-        case .http(let c, let u): return "내려받기 실패 (\(c)) \(u)"
-        case .noAsset: return "릴리스에서 설치 파일을 못 찾았어요"
-        case .noFiles: return "압축 안에 폰트 파일(otf/ttf)이 없어요"
-        case .unzip: return "압축 풀기 실패"
+        case .http(let c, let u): return T("내려받기 실패 (\(c)) \(u)", "Download failed (\(c)) \(u)")
+        case .noAsset: return T("릴리스에서 설치 파일을 못 찾았어요", "No installable file found in the release")
+        case .noFiles: return T("압축 안에 폰트 파일(otf/ttf)이 없어요", "No font files (otf/ttf) in the archive")
+        case .unzip: return T("압축 풀기 실패", "Could not unzip")
         }
     }
 }

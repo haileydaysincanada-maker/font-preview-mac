@@ -20,7 +20,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "notosanskr"
-   }
+   },
+   "descEN": "Google/Adobe's joint Korean sans. 9 weights; the all-purpose body and UI face."
   },
   {
    "id": "g:notoserifkr",
@@ -41,7 +42,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "notoserifkr"
-   }
+   },
+   "descEN": "Serif companion to Noto Sans KR. Long text and print."
   },
   {
    "id": "g:gothica1",
@@ -62,7 +64,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "gothica1"
-   }
+   },
+   "descEN": "Clean Korean sans in 9 weights, from headlines to body text."
   },
   {
    "id": "g:ibmplexsanskr",
@@ -83,7 +86,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "ibmplexsanskr"
-   }
+   },
+   "descEN": "Korean cut of IBM's corporate typeface; Latin and Hangul sit well together."
   },
   {
    "id": "g:gowundodum",
@@ -105,7 +109,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "gowundodum"
-   }
+   },
+   "descEN": "Soft sans. Essays and gentle, emotional content."
   },
   {
    "id": "g:gowunbatang",
@@ -126,7 +131,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "gowunbatang"
-   }
+   },
+   "descEN": "Serif partner of Gowun Dodum with a warm printed feel."
   },
   {
    "id": "g:hahmlet",
@@ -147,7 +153,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "hahmlet"
-   }
+   },
+   "descEN": "Contemporary Korean serif in 9 weights; stylish headlines."
   },
   {
    "id": "g:nanumgothic",
@@ -168,7 +175,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "nanumgothic"
-   }
+   },
+   "descEN": "The most widely used free Korean sans. A must-have."
   },
   {
    "id": "g:nanummyeongjo",
@@ -189,7 +197,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "nanummyeongjo"
-   }
+   },
+   "descEN": "Serif of the Nanum family. Body text and print."
   },
   {
    "id": "g:nanumpenscript",
@@ -210,7 +219,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "nanumpenscript"
-   }
+   },
+   "descEN": "Pen handwriting; light and friendly note feel."
   },
   {
    "id": "g:nanumbrushscript",
@@ -231,7 +241,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "nanumbrushscript"
-   }
+   },
+   "descEN": "Brush-style handwriting for emotional titles."
   },
   {
    "id": "g:nanumgothiccoding",
@@ -252,7 +263,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "nanumgothiccoding"
-   }
+   },
+   "descEN": "Monospaced Korean. Code, tables, aligned numbers."
   },
   {
    "id": "g:blackhansans",
@@ -274,7 +286,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "blackhansans"
-   }
+   },
+   "descEN": "Very heavy display sans. One-punch posters and thumbnails."
   },
   {
    "id": "g:dohyeon",
@@ -297,7 +310,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "dohyeon"
-   }
+   },
+   "descEN": "Baemin's Do Hyeon: a packed, punchy headline face."
   },
   {
    "id": "g:jua",
@@ -319,7 +333,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "jua"
-   }
+   },
+   "descEN": "Baemin's Jua: round, chubby, cute headlines."
   },
   {
    "id": "g:gaegu",
@@ -341,7 +356,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "gaegu"
-   }
+   },
+   "descEN": "Wobbly, cute handwriting for kids and everyday content."
   },
   {
    "id": "g:gamjaflower",
@@ -362,7 +378,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "gamjaflower"
-   }
+   },
+   "descEN": "Pen handwriting with a letter-and-diary feel."
   },
   {
    "id": "g:himelody",
@@ -384,7 +401,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "himelody"
-   }
+   },
+   "descEN": "Round, cute handwriting."
   },
   {
    "id": "g:poorstory",
@@ -405,7 +423,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "poorstory"
-   }
+   },
+   "descEN": "Handwriting that looks like a child wrote it."
   },
   {
    "id": "g:cutefont",
@@ -427,7 +446,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "cutefont"
-   }
+   },
+   "descEN": "Small, cute handwriting for stickers and speech bubbles."
   },
   {
    "id": "g:sunflower",
@@ -449,7 +469,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "sunflower"
-   }
+   },
+   "descEN": "Tall, light sans for refined headlines."
   },
   {
    "id": "g:stylish",
@@ -471,7 +492,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "stylish"
-   }
+   },
+   "descEN": "Display sans with distinctive strokes."
   },
   {
    "id": "g:yeonsung",
@@ -493,7 +515,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "yeonsung"
-   }
+   },
+   "descEN": "Rounded handwriting headlines."
   },
   {
    "id": "g:dokdo",
@@ -514,7 +537,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "dokdo"
-   }
+   },
+   "descEN": "Handwriting with a lively brush touch."
   },
   {
    "id": "g:eastseadokdo",
@@ -535,7 +559,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "eastseadokdo"
-   }
+   },
+   "descEN": "Rough brush strokes for strong titles."
   },
   {
    "id": "g:kiranghaerang",
@@ -557,7 +582,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "kiranghaerang"
-   }
+   },
+   "descEN": "Brush-written face with a traditional feel."
   },
   {
    "id": "g:songmyung",
@@ -578,7 +604,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "songmyung"
-   }
+   },
+   "descEN": "Old-type serif for vintage headlines."
   },
   {
    "id": "g:gugi",
@@ -600,7 +627,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "gugi"
-   }
+   },
+   "descEN": "Round, playful display face."
   },
   {
    "id": "g:singleday",
@@ -622,7 +650,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "singleday"
-   }
+   },
+   "descEN": "Bouncy display face for event titles."
   },
   {
    "id": "g:blackandwhitepicture",
@@ -644,7 +673,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "blackandwhitepicture"
-   }
+   },
+   "descEN": "Retro signboard handwriting."
   },
   {
    "id": "g:diphylleia",
@@ -666,7 +696,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "diphylleia"
-   }
+   },
+   "descEN": "Pen-drawn serif feel for quotes."
   },
   {
    "id": "g:orbit",
@@ -688,7 +719,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "orbit"
-   }
+   },
+   "descEN": "Geometric display sans; tech and future."
   },
   {
    "id": "g:moiraione",
@@ -710,7 +742,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "moiraione"
-   }
+   },
+   "descEN": "Heavy display face built from dots."
   },
   {
    "id": "g:grandifloraone",
@@ -732,7 +765,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "grandifloraone"
-   }
+   },
+   "descEN": "Elegant petal-like serif display."
   },
   {
    "id": "g:dongle",
@@ -754,7 +788,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "dongle"
-   }
+   },
+   "descEN": "Round, cute headline face in 3 weights."
   },
   {
    "id": "g:inter",
@@ -775,7 +810,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "inter"
-   }
+   },
+   "descEN": "The standard UI sans for screens, body text and numbers."
   },
   {
    "id": "g:roboto",
@@ -796,7 +832,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "roboto"
-   }
+   },
+   "descEN": "Android's default sans; safe everywhere."
   },
   {
    "id": "g:montserrat",
@@ -818,7 +855,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "montserrat"
-   }
+   },
+   "descEN": "Geometric headline sans with handsome capitals."
   },
   {
    "id": "g:poppins",
@@ -840,7 +878,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "poppins"
-   }
+   },
+   "descEN": "Rounded geometric sans for friendly brands."
   },
   {
    "id": "g:dmsans",
@@ -861,7 +900,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "dmsans"
-   }
+   },
+   "descEN": "Low-contrast clean sans for web and apps."
   },
   {
    "id": "g:manrope",
@@ -882,7 +922,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "manrope"
-   }
+   },
+   "descEN": "Modern variable sans with a startup feel."
   },
   {
    "id": "g:outfit",
@@ -904,7 +945,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "outfit"
-   }
+   },
+   "descEN": "Geometric rounded sans for headlines."
   },
   {
    "id": "g:plusjakartasans",
@@ -925,7 +967,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "plusjakartasans"
-   }
+   },
+   "descEN": "Soft modern sans."
   },
   {
    "id": "g:figtree",
@@ -947,7 +990,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "figtree"
-   }
+   },
+   "descEN": "Friendly rounded sans."
   },
   {
    "id": "g:worksans",
@@ -968,7 +1012,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "worksans"
-   }
+   },
+   "descEN": "Sans that works for both body and headlines."
   },
   {
    "id": "g:josefinsans",
@@ -990,7 +1035,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "josefinsans"
-   }
+   },
+   "descEN": "1920s geometric vintage sans."
   },
   {
    "id": "g:raleway",
@@ -1012,7 +1058,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "raleway"
-   }
+   },
+   "descEN": "Elegant thin sans for fashion and beauty."
   },
   {
    "id": "g:spacegrotesk",
@@ -1034,7 +1081,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "spacegrotesk"
-   }
+   },
+   "descEN": "Grotesque with quirky letterforms; tech."
   },
   {
    "id": "g:syne",
@@ -1057,7 +1105,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "syne"
-   }
+   },
+   "descEN": "Wide art-display sans."
   },
   {
    "id": "g:bricolagegrotesque",
@@ -1079,7 +1128,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "bricolagegrotesque"
-   }
+   },
+   "descEN": "Characterful variable grotesque."
   },
   {
    "id": "g:unbounded",
@@ -1102,7 +1152,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "unbounded"
-   }
+   },
+   "descEN": "Wide, heavy display sans."
   },
   {
    "id": "g:playfairdisplay",
@@ -1124,7 +1175,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "playfairdisplay"
-   }
+   },
+   "descEN": "High-contrast headline serif with a magazine feel."
   },
   {
    "id": "g:dmserifdisplay",
@@ -1146,7 +1198,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "dmserifdisplay"
-   }
+   },
+   "descEN": "Heavy, elegant headline serif."
   },
   {
    "id": "g:instrumentserif",
@@ -1168,7 +1221,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "instrumentserif"
-   }
+   },
+   "descEN": "Narrow, refined headline serif; currently trending."
   },
   {
    "id": "g:cormorantgaramond",
@@ -1190,7 +1244,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "cormorantgaramond"
-   }
+   },
+   "descEN": "Thin, classical Garamond."
   },
   {
    "id": "g:ebgaramond",
@@ -1211,7 +1266,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "ebgaramond"
-   }
+   },
+   "descEN": "Body-text Garamond with a book feel."
   },
   {
    "id": "g:lora",
@@ -1232,7 +1288,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "lora"
-   }
+   },
+   "descEN": "Body serif that reads well on screens."
   },
   {
    "id": "g:merriweather",
@@ -1253,7 +1310,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "merriweather"
-   }
+   },
+   "descEN": "Sturdy body serif."
   },
   {
    "id": "g:librebaskerville",
@@ -1274,7 +1332,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "librebaskerville"
-   }
+   },
+   "descEN": "Baskerville for body text."
   },
   {
    "id": "g:sourceserif4",
@@ -1295,7 +1354,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "sourceserif4"
-   }
+   },
+   "descEN": "Serif from Adobe's Source family."
   },
   {
    "id": "g:bodonimoda",
@@ -1317,7 +1377,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "bodonimoda"
-   }
+   },
+   "descEN": "High-contrast Bodoni for fashion magazines."
   },
   {
    "id": "g:cinzel",
@@ -1340,7 +1401,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "cinzel"
-   }
+   },
+   "descEN": "Roman inscription capitals; luxury and classic."
   },
   {
    "id": "g:gloock",
@@ -1362,7 +1424,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "gloock"
-   }
+   },
+   "descEN": "Heavy high-contrast headline serif."
   },
   {
    "id": "g:bebasneue",
@@ -1385,7 +1448,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "bebasneue"
-   }
+   },
+   "descEN": "Narrow, tall capitals for posters."
   },
   {
    "id": "g:oswald",
@@ -1407,7 +1471,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "oswald"
-   }
+   },
+   "descEN": "Condensed sans for newspaper headlines."
   },
   {
    "id": "g:anton",
@@ -1430,7 +1495,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "anton"
-   }
+   },
+   "descEN": "Very heavy, narrow impact headline face."
   },
   {
    "id": "g:barlowcondensed",
@@ -1452,7 +1518,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "barlowcondensed"
-   }
+   },
+   "descEN": "Condensed sans family with many weights."
   },
   {
    "id": "g:sixcaps",
@@ -1474,7 +1541,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "sixcaps"
-   }
+   },
+   "descEN": "Extremely narrow capitals."
   },
   {
    "id": "g:archivoblack",
@@ -1496,7 +1564,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "archivoblack"
-   }
+   },
+   "descEN": "Heavy grotesque headline."
   },
   {
    "id": "g:alfaslabone",
@@ -1519,7 +1588,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "alfaslabone"
-   }
+   },
+   "descEN": "Heavy slab serif for retro posters."
   },
   {
    "id": "g:abrilfatface",
@@ -1542,7 +1612,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "abrilfatface"
-   }
+   },
+   "descEN": "Heavy high-contrast display."
   },
   {
    "id": "g:pacifico",
@@ -1564,7 +1635,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "pacifico"
-   }
+   },
+   "descEN": "Surf-sign brush script."
   },
   {
    "id": "g:lobster",
@@ -1586,7 +1658,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "lobster"
-   }
+   },
+   "descEN": "Heavy script for logos and signs."
   },
   {
    "id": "g:dancingscript",
@@ -1607,7 +1680,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "dancingscript"
-   }
+   },
+   "descEN": "Lively cursive."
   },
   {
    "id": "g:caveat",
@@ -1628,7 +1702,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "caveat"
-   }
+   },
+   "descEN": "Natural pen handwriting for notes."
   },
   {
    "id": "g:satisfy",
@@ -1649,7 +1724,8 @@
     "kind": "google",
     "dir": "apache",
     "slug": "satisfy"
-   }
+   },
+   "descEN": "Brush-pen script."
   },
   {
    "id": "g:greatvibes",
@@ -1671,7 +1747,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "greatvibes"
-   }
+   },
+   "descEN": "Elegant calligraphic script for invitations."
   },
   {
    "id": "g:sacramento",
@@ -1693,7 +1770,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "sacramento"
-   }
+   },
+   "descEN": "Thin monoline script."
   },
   {
    "id": "g:permanentmarker",
@@ -1715,7 +1793,8 @@
     "kind": "google",
     "dir": "apache",
     "slug": "permanentmarker"
-   }
+   },
+   "descEN": "Marker-pen handwriting."
   },
   {
    "id": "g:indieflower",
@@ -1737,7 +1816,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "indieflower"
-   }
+   },
+   "descEN": "Round, friendly handwriting."
   },
   {
    "id": "g:amaticsc",
@@ -1759,7 +1839,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "amaticsc"
-   }
+   },
+   "descEN": "Thin, tall handwritten capitals."
   },
   {
    "id": "g:shadowsintolight",
@@ -1780,7 +1861,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "shadowsintolight"
-   }
+   },
+   "descEN": "Light pen handwriting."
   },
   {
    "id": "g:nunito",
@@ -1802,7 +1884,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "nunito"
-   }
+   },
+   "descEN": "Rounded-terminal sans for soft UI."
   },
   {
    "id": "g:quicksand",
@@ -1824,7 +1907,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "quicksand"
-   }
+   },
+   "descEN": "Rounded geometric sans for cute brands."
   },
   {
    "id": "g:comfortaa",
@@ -1846,7 +1930,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "comfortaa"
-   }
+   },
+   "descEN": "Very round display sans."
   },
   {
    "id": "g:fredoka",
@@ -1868,7 +1953,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "fredoka"
-   }
+   },
+   "descEN": "Chubby rounded headline face for kids' brands."
   },
   {
    "id": "g:baloo2",
@@ -1890,7 +1976,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "baloo2"
-   }
+   },
+   "descEN": "Round, heavy display."
   },
   {
    "id": "g:righteous",
@@ -1912,7 +1999,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "righteous"
-   }
+   },
+   "descEN": "Retro display face."
   },
   {
    "id": "g:bungee",
@@ -1935,7 +2023,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "bungee"
-   }
+   },
+   "descEN": "Display face for vertical signage."
   },
   {
    "id": "g:monoton",
@@ -1956,7 +2045,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "monoton"
-   }
+   },
+   "descEN": "Neon-sign striped display."
   },
   {
    "id": "g:limelight",
@@ -1977,7 +2067,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "limelight"
-   }
+   },
+   "descEN": "Art-deco cinema marquee face."
   },
   {
    "id": "g:shrikhand",
@@ -1999,7 +2090,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "shrikhand"
-   }
+   },
+   "descEN": "Chubby italic display."
   },
   {
    "id": "g:pressstart2p",
@@ -2020,7 +2112,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "pressstart2p"
-   }
+   },
+   "descEN": "8-bit game pixel font."
   },
   {
    "id": "g:silkscreen",
@@ -2041,7 +2134,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "silkscreen"
-   }
+   },
+   "descEN": "Small pixel font."
   },
   {
    "id": "g:specialelite",
@@ -2063,7 +2157,8 @@
     "kind": "google",
     "dir": "apache",
     "slug": "specialelite"
-   }
+   },
+   "descEN": "Typewriter lettering."
   },
   {
    "id": "g:courierprime",
@@ -2084,7 +2179,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "courierprime"
-   }
+   },
+   "descEN": "A readable Courier; scripts and monospace."
   },
   {
    "id": "g:jetbrainsmono",
@@ -2105,7 +2201,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "jetbrainsmono"
-   }
+   },
+   "descEN": "Coding monospace; numbers and code."
   },
   {
    "id": "g:ibmplexmono",
@@ -2126,7 +2223,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "ibmplexmono"
-   }
+   },
+   "descEN": "IBM's monospace."
   },
   {
    "id": "g:firacode",
@@ -2147,7 +2245,8 @@
     "kind": "google",
     "dir": "ofl",
     "slug": "firacode"
-   }
+   },
+   "descEN": "Coding monospace with ligatures."
   },
   {
    "id": "gh:orioncactus/pretendard",
@@ -2169,7 +2268,8 @@
     "repo": "orioncactus/pretendard",
     "asset": "^Pretendard-[\\d.]+\\.zip$"
    },
-   "preview": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/public/static/Pretendard-Regular.otf"
+   "preview": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/public/static/Pretendard-Regular.otf",
+   "descEN": "The de facto standard sans among Korean designers. 9 weights, balanced Latin and digits. Install this first."
   },
   {
    "id": "gh:sun-typeface/SUIT",
@@ -2191,7 +2291,8 @@
     "repo": "sun-typeface/SUIT",
     "asset": "\\.zip$"
    },
-   "preview": "https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/otf/SUIT-Regular.otf"
+   "preview": "https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/otf/SUIT-Regular.otf",
+   "descEN": "UI sans on par with Pretendard; a little squarer and firmer."
   },
   {
    "id": "l:Cafe24 Fonts",
@@ -2210,7 +2311,8 @@
    "match": [
     "Cafe24"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Round Ssurround, handwritten Anemone, serif-leaning Danjunghae — all in one place."
   },
   {
    "id": "l:BM Fonts",
@@ -2234,7 +2336,8 @@
     "BMEULJIRO",
     "배달의민족"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Headline faces drawn from street signage; Euljiro has a brush feel."
   },
   {
    "id": "l:S-Core Dream",
@@ -2253,7 +2356,8 @@
     "SCDream",
     "에스코어"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Sans in 9 weights, from 1Thin to 9Black."
   },
   {
    "id": "l:Gmarket Sans",
@@ -2271,7 +2375,8 @@
    "match": [
     "Gmarket"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Sans with rounded strokes; Bold is a popular headline."
   },
   {
    "id": "l:Hakgyoansim",
@@ -2291,7 +2396,8 @@
     "Hakgyoansim",
     "학교안심"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Released by the Ministry of Education. Lots of round handwriting styles for cute content."
   },
   {
    "id": "l:Gangwon Edu",
@@ -2310,7 +2416,8 @@
     "GangwonEdu",
     "강원교육"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Handwriting and rounded faces from a regional education office."
   },
   {
    "id": "l:Paperlogy",
@@ -2328,7 +2435,8 @@
     "Paperlogy",
     "페이퍼로지"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Sans tuned for paper-textured print; 9 weights."
   },
   {
    "id": "l:Freesentation",
@@ -2345,7 +2453,8 @@
    "match": [
     "Freesentation"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Sans for presentations, narrower than Pretendard."
   },
   {
    "id": "l:Onglip",
@@ -2363,7 +2472,8 @@
     "Ownglyph",
     "온글잎"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Real people's handwriting turned into fonts; a huge variety."
   },
   {
    "id": "l:Jalnan",
@@ -2382,7 +2492,8 @@
     "Jalnan",
     "잘난"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Heavy, slanted headline face for thumbnails and banners."
   },
   {
    "id": "l:Tmon Monsori",
@@ -2400,7 +2511,8 @@
     "Tmon",
     "몬소리"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Very heavy advertising headline face."
   },
   {
    "id": "l:NEXON Lv2 Gothic",
@@ -2419,7 +2531,8 @@
     "NEXON",
     "넥슨"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Game-studio sans with slightly rounded corners."
   },
   {
    "id": "l:CookieRun",
@@ -2438,7 +2551,8 @@
     "CookieRun",
     "쿠키런"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Round, cute headline face for kids and games."
   },
   {
    "id": "l:Mapo Fonts",
@@ -2457,7 +2571,8 @@
     "Mapo",
     "마포"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Handwriting and brush faces from Mapo district."
   },
   {
    "id": "l:Yangjin",
@@ -2476,7 +2591,8 @@
     "Yangjin",
     "양진"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Heavy, round retro headline face."
   },
   {
    "id": "l:Aggro",
@@ -2494,7 +2610,8 @@
     "Aggro",
     "어그로"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Strong headline face, a YouTube-thumbnail regular."
   },
   {
    "id": "l:The Jamsil",
@@ -2513,7 +2630,8 @@
     "Jamsil",
     "잠실"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Lotte's sans in 6 weights."
   },
   {
    "id": "l:Binggrae",
@@ -2532,7 +2650,8 @@
     "Binggrae",
     "빙그레"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Friendly face with a round handwritten feel."
   },
   {
    "id": "l:Chosun Ilbo Myungjo",
@@ -2550,7 +2669,8 @@
     "Chosun",
     "조선일보"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Newspaper body serif; steady for long text."
   },
   {
    "id": "l:KOTRA Hope",
@@ -2569,7 +2689,8 @@
     "KOTRA",
     "코트라"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Heavy handwritten headline face."
   },
   {
    "id": "l:Subak Hwa",
@@ -2588,7 +2709,8 @@
     "SangSang",
     "상상토끼"
    ],
-   "install": null
+   "install": null,
+   "descEN": "From the SangSang Tokki handwriting series."
   },
   {
    "id": "l:Noonnu Popular",
@@ -2604,7 +2726,8 @@
    ],
    "desc": "눈누에서 인기순으로 훑어보기.",
    "match": [],
-   "install": null
+   "install": null,
+   "descEN": "Browse Noonnu, Korea's free-font index, by popularity."
   },
   {
    "id": "a:proxima-nova",
@@ -2622,7 +2745,8 @@
     "Proxima Nova",
     "Proxima Nova"
    ],
-   "install": null
+   "install": null,
+   "descEN": "The branding staple geometric sans; one of Adobe Fonts' most used."
   },
   {
    "id": "a:futura-pt",
@@ -2641,7 +2765,8 @@
     "Futura PT",
     "Futura PT"
    ],
-   "install": null
+   "install": null,
+   "descEN": "The original geometric sans. Fashion and branding."
   },
   {
    "id": "a:acumin",
@@ -2659,7 +2784,8 @@
     "Acumin",
     "Acumin"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Adobe's neutral grotesque; 90 weights and widths."
   },
   {
    "id": "a:neue-haas-grotesk",
@@ -2677,7 +2803,8 @@
     "Neue Haas Grotesk",
     "Neue Haas Grotesk"
    ],
-   "install": null
+   "install": null,
+   "descEN": "The original Helvetica. As canonical as it gets."
   },
   {
    "id": "a:brandon-grotesque",
@@ -2696,7 +2823,8 @@
     "Brandon Grotesque",
     "Brandon Grotesque"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Rounded geometric sans for cafés and lifestyle brands."
   },
   {
    "id": "a:sofia",
@@ -2715,7 +2843,8 @@
     "Sofia Pro",
     "Sofia Pro"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Soft, rounded sans."
   },
   {
    "id": "a:garamond-premier",
@@ -2733,7 +2862,8 @@
     "Garamond Premier Pro",
     "Garamond Premier Pro"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Adobe's Garamond for books and print."
   },
   {
    "id": "a:adobe-caslon",
@@ -2751,7 +2881,8 @@
     "Adobe Caslon Pro",
     "Adobe Caslon Pro"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Classic English serif."
   },
   {
    "id": "a:minion",
@@ -2769,7 +2900,8 @@
     "Minion Pro",
     "Minion Pro"
    ],
-   "install": null
+   "install": null,
+   "descEN": "The standard print body serif."
   },
   {
    "id": "a:trajan",
@@ -2789,7 +2921,8 @@
     "Trajan Pro 3",
     "Trajan Pro 3"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Movie-poster capitals."
   },
   {
    "id": "a:mrs-eaves",
@@ -2808,7 +2941,8 @@
     "Mrs Eaves",
     "Mrs Eaves"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Elegant Baskerville variation for invitations and packaging."
   },
   {
    "id": "a:bickham-script",
@@ -2827,7 +2961,8 @@
     "Bickham Script Pro 3",
     "Bickham Script Pro 3"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Extremely ornate copperplate script."
   },
   {
    "id": "a:myriad",
@@ -2845,7 +2980,8 @@
     "Myriad Pro",
     "Myriad Pro"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Adobe's default sans; dependable."
   },
   {
    "id": "a:din-2014",
@@ -2864,7 +3000,8 @@
     "DIN 2014",
     "DIN 2014"
    ],
-   "install": null
+   "install": null,
+   "descEN": "German industrial-standard sans; numbers and signage."
   },
   {
    "id": "a:source-han-sans-korean",
@@ -2882,7 +3019,8 @@
     "본고딕",
     "Source Han Sans Korean"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Adobe's release of Noto Sans KR; same design."
   },
   {
    "id": "a:source-han-serif-korean",
@@ -2900,7 +3038,8 @@
     "본명조",
     "Source Han Serif Korean"
    ],
-   "install": null
+   "install": null,
+   "descEN": "Adobe's release of Noto Serif KR."
   }
  ]
 }

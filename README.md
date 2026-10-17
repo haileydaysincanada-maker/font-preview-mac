@@ -1,13 +1,44 @@
 # Font Preview for Mac (폰트 미리보기)
 
-A native macOS font previewer in the spirit of NexusFont on Windows: every installed font (Adobe Fonts included) rendered with the same sample text in one window, **sorted by how fonts look** — bold display, sans, serif, rounded, handwriting, brush, decorative, wide, condensed — plus personal sets, folder previews for fonts you haven't installed, and a curated "worth installing" tab with one-click install for open-licensed fonts.
+A native macOS font previewer in the spirit of NexusFont on Windows: every installed font (Adobe Fonts included) rendered with the same sample text in one window, **sorted by how fonts look** — bold display, sans, serif, rounded, handwriting, brush, decorative, wide, condensed — plus personal sets, folder previews for fonts you haven't installed, and a curated "worth installing" tab with live previews and one-click install for open-licensed fonts.
 
-- SwiftUI, macOS 13+, no Xcode needed: `native/build.sh` builds `폰트 미리보기.app` with the Command Line Tools' `swiftc` in under a minute.
-- Shape classification is measured from rendered glyphs (stroke width, serif feet, corner roundness, baseline wobble, aspect ratio) with name hints; mistakes are one click to fix and remembered.
-- Repo: https://github.com/haileydaysincanada-maker/font-preview-mac — download the prebuilt app from **Releases** (unsigned — on first launch right-click → Open).
-- Korean UI. Built by a graphic designer together with an AI pair programmer (Claude); the Korean notes below are the working documentation.
+**English and Korean UI** — follows your system language, switchable any time from the 🌐 menu (top right) or Help → Language.
 
-License: MIT. Font catalog links point to each font's own distributor and license — no font files are bundled.
+![All installed fonts](docs/all-fonts-en.jpg)
+
+## Install
+
+1. Download `FontPreview-<version>.zip` from [Releases](https://github.com/haileydaysincanada-maker/font-preview-mac/releases), unzip, move the app to Applications.
+2. First launch: **right-click → Open** (the app is not notarized; macOS shows an "unidentified developer" warning once).
+3. macOS 13 Ventura or later. Universal binary (Apple Silicon + Intel).
+
+Or build it yourself with only the Command Line Tools (no Xcode): `native/build.sh` → `폰트 미리보기.app` in about a minute.
+
+## How to use
+
+- **Sample text** at the top; the **Phrases** menu keeps your favorites; **Size** slider, **Text / Background** colors, **Group families** (one row per family, expand with "N styles").
+- **Sidebar → Fonts**: all installed, Korean, Latin-only, recently installed (30 days), ★ favorites.
+- **Sidebar → By look (auto)**: fonts are classified by rendering a few glyphs and measuring stroke width, serif feet, corner roundness, baseline wobble and aspect ratio (name hints help too). Click a font's label to fix a wrong guess — it is remembered. Brush vs pen handwriting is the weakest guess; fix those by hand.
+- **All / Korean / Latin only** toggle (header right) filters whatever you are looking at; fonts without Korean glyphs always show the Latin part of your sample.
+
+![Rounded · cute](docs/by-look-rounded-en.jpg)
+
+- **My sets**: "+ Set" on any font row; rename or delete from the sidebar context menu.
+- **Folders (not installed)**: press +, drop a folder on the sidebar or the app icon, or ⌘O. Fonts are registered for this app only — nothing is installed.
+- **Recommended → Worth installing**: 139 curated fonts (Korean and Latin: Google Fonts, Pretendard/SUIT, Noonnu distributors, Adobe Fonts). Each shows source, license, tags, a **live preview in your sample text** (downloaded on demand, not installed) and, for open-licensed fonts, an **Install** button that puts the files in `~/Library/Fonts`. Distributor-only fonts open their page; Adobe fonts open the activation page.
+- **Recommended → For my taste**: star or set at least 3 fonts and this list ranks the catalog by similarity to what you like.
+
+![Recommended](docs/recommended-en.jpg)
+
+Click a font name to copy its PostScript name, click the file name to copy its path. `/` focuses search.
+
+## Data & privacy
+
+Everything stays on your Mac: `~/Library/Application Support/fontviewer/` (favorites, sets, phrases, manual classifications, registered folders, analysis cache) and `~/Library/Caches/fontviewer/preview/` (preview files). Network is used only when you open the Recommended tab (preview downloads from Google Fonts / jsDelivr) or press Install (GitHub).
+
+## License
+
+MIT. The font catalog only links to each font's own distributor and license — no font files are bundled.
 
 ---
 

@@ -114,6 +114,10 @@ for slug, name, tags, desc in S.ADOBE:
                   "license": "Adobe Fonts (Creative Cloud 구독에 포함, 상업용 가능)", "tags": tags, "desc": desc,
                   "match": [m, name.split("(")[-1].rstrip(")") if "(" in name else m], "install": None})
 
+missing = [i["nameEN"] for i in items if i["nameEN"] not in S.DESC_EN]
+for i in items:
+    i["descEN"] = S.DESC_EN.get(i["nameEN"])
+print("descEN missing:", missing)
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "catalog.json")
 json.dump({"version": 1, "items": items}, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print(f"\n✅ {len(items)}개 → {out}")

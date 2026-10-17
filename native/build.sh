@@ -9,7 +9,7 @@ SDK="$(xcrun --show-sdk-path)"
 BIN="$OUT/Contents/MacOS"
 RES="$OUT/Contents/Resources"
 # 빌드 번호: 빌드마다 1씩 증가 (native/BUILD_NUMBER)
-VERSION="1.1"
+VERSION="1.2"
 AUTHOR="Hailey (haileydayz)"
 CONTACT="hello@haileydayz.com"
 BN_FILE="$HERE/BUILD_NUMBER"
@@ -19,11 +19,15 @@ BUILT_AT="$(date +%Y-%m-%d)"
 rm -rf "$OUT"
 mkdir -p "$BIN" "$RES"
 
-echo "▶ 컴파일 ($ARCH)…"
-swiftc -O -parse-as-library \
-  -target "$ARCH-apple-macos13.0" -sdk "$SDK" \
-  -module-name FontViewer \
-  "$HERE"/Sources/*.swift -o "$BIN/FontViewer"
+echo "▶ 컴파일 (universal: x86_64 + arm64)…"
+TMPB="$(mktemp -d)"
+for A in x86_64 arm64; do
+  swiftc -O -parse-as-library -target "$A-apple-macos13.0" -sdk "$SDK" -module-name FontViewer \
+    "$HERE"/Sources/*.swift -o "$TMPB/FontViewer-$A" || { echo "✗ $A 컴파일 실패"; exit 1; }
+done
+lipo -create "$TMPB/FontViewer-x86_64" "$TMPB/FontViewer-arm64" -output "$BIN/FontViewer"
+rm -rf "$TMPB"
+lipo -info "$BIN/FontViewer"
 
 cat > "$OUT/Contents/Info.plist" <<PLIST
 <?xml version="1.0" encoding="UTF-8"?>

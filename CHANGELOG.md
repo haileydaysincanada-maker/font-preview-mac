@@ -1,5 +1,14 @@
 # 폰트뷰어 변경 이력
 
+## 2026-10-16 (밤 4) — v1.2: 영어 UI · 유니버설 빌드 · 영문 README
+
+헤일리 «한글 UI면 외국인 못 쓰잖아, 언어 선택 — 영어는 필수».
+- `Sources/L10n.swift`: `T("한국어","English")` 한 함수로 전 화면 문구 이중화. 기본 = 시스템 언어(한국어면 ko, 아니면 en), 🌐 메뉴(상단 오른쪽)·도움말 → Language 로 전환, `user.json state2.ui` 에 기억. `ContentView.id(uiLang)` 로 전환 즉시 전체 재구성.
+- 분류·굵기 이름 `Cat.name()`(ko/en), 라이선스 표기 `licenseText()`, 카탈로그 설명 139개 영문(`catalog_src.DESC_EN` → `descEN`), 영어 UI 에선 영문명을 앞에·한글명을 뒤에.
+- 맥 메뉴바 제목(파일·편집·보기…)은 시스템 언어를 따른다 — 앱이 바꾸지 않음.
+- `build.sh` 유니버설: x86_64·arm64 따로 컴파일 후 `lipo -create`. 인텔 맥에서 arm64 크로스컴파일 OK(CLT swiftc).
+- README 를 영문 사용법 + 스크린샷 3장(docs/) 앞세우고 한국어 노트는 뒤로.
+
 ## 2026-10-16 (밤 3) — GitHub 공개
 
 - https://github.com/haileydaysincanada-maker/font-preview-mac (public, MIT). 이 폴더가 git 저장소(main). `.app`·zip·linkedin 초안·.DS_Store 는 .gitignore. 릴리스 v1.1 에 `FontPreview-1.1.zip`(빌드 2, 미공증 → 우클릭 열기). 커밋 이메일은 hello@haileydayz.com(로컬 설정). 빌드 후 배포 절차: `native/build.sh` → `ditto -c -k --keepParent "폰트 미리보기.app" FontPreview-<ver>.zip` → `gh release create v<ver> <zip>` → 커밋·푸시.
