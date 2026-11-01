@@ -70,10 +70,14 @@ final class Store: ObservableObject {
     private var installedCatalogIDs = Set<String>()
     private(set) var tasteCount = 0
     @Published private(set) var previewFonts: [String: CGFont] = [:]
+    @Published private(set) var previewImages: [String: NSImage] = [:]   // woff2 (눈누) — 웹뷰 캔버스 PNG
+    @Published private(set) var noonnuRefreshing = false
+    @Published private(set) var noonnuStatus = ""
     @Published private(set) var previewLoading = Set<String>()
     @Published private(set) var previewFailed = Set<String>()
     private var previewFontCache: [String: Font] = [:]
     @Published private(set) var previewText = ""   // 미리보기 서브셋에 쓰는 문구 (입력 후 0.6초 뒤 반영)
+    private var previewSample = ""                  // 디바운스된 원문 — 항목별로 «실제 표시될 문구»를 만들어 서브셋에 넣는다
     @Published private(set) var expanded = Set<String>()
     @Published private(set) var visible: [FontItem] = []
     @Published private(set) var visibleFamilies = 0
@@ -92,8 +96,8 @@ final class Store: ObservableObject {
 
     private init() {
         $query.debounce(for: .milliseconds(150), scheduler: DispatchQueue.main).sink { [weak self] _ in self?.applyFilters() }.store(in: &bag)
-        $sample.debounce(for: .milliseconds(600), scheduler: DispatchQueue.main).sink { [weak self] s in self?.previewText = Store.previewTextFor(s) }.store(in: &bag)
-        previewText = Store.previewTextFor(sample)
+        $sample.debounce(for: .milliseconds(600), scheduler: DispatchQueue.main).sink { [weak self] s in self?.previewSample = s; self?.previewText = Store.previewTextFor(s) }.store(in: &bag)
+        previewSample = sample; previewText = Store.previewTextFor(sample)
         loadUser()
         folders = loadFolders()
         profiles = (try? JSONDecoder().decode([String: Profile].self, from: Data(contentsOf: PROFILES_JSON))) ?? [:]
@@ -210,16 +214,67 @@ final class Store: ObservableObject {
         for ch in (s + " 0123456789") where !ch.isWhitespace || ch == " " { if seen.insert(ch).inserted { out.append(ch) } }
         return String(out.prefix(200))
     }
-    private func previewKey(_ c: CatalogItem) -> String { c.source == "google" ? c.id + "|" + previewText + "|" + c.nameEN : c.id }
+    private func fgKey() -> String { let n = NSColor(fg).usingColorSpace(.sRGB) ?? .black; return String(format: "%02x%02x%02x", Int(n.redComponent * 255), Int(n.greenComponent * 255), Int(n.blueComponent * 255)) }
+    /// Google 서브셋에 넣을 글자 = 그 줄에 실제로 그려질 문구(영문 폰트면 한글을 뗀 뒤 남는 문구 — 비면 폴백 팬그램) + 폰트 이름 + 숫자.
+    /// 예전엔 원문(한글)만 넣어서, 한글 문구일 때 영문 폰트 줄의 폴백 팬그램 글자가 서브셋에 없어 이름 글자만 그 폰트로 그려졌다(2026-11-01 헤일리 발견).
+    private func subsetText(_ c: CatalogItem) -> String {
+        let shown = latinOnly(previewSample.isEmpty ? c.nameEN : previewSample, strip: c.lang == "la" || lang == "la")
+        return Store.previewTextFor(shown)
+    }
+    private func previewKey(_ c: CatalogItem) -> String {
+        if c.isWoff2 { return c.id + "|" + shownSample(forCatalog: c) + "|" + String(Int(size)) + "|" + fgKey() }
+        return c.source == "google" ? c.id + "|" + subsetText(c) + "|" + c.nameEN : c.id
+    }
     func loadPreview(_ c: CatalogItem) {
         let k = previewKey(c)
-        guard c.previewable, previewFonts[k] == nil, !previewLoading.contains(k), !previewFailed.contains(k) else { return }
+        guard c.previewable, !previewLoading.contains(k), !previewFailed.contains(k) else { return }
+        if c.isWoff2 {
+            // woff2 는 CoreText 가 못 읽는다 → 숨은 웹뷰 캔버스에 그려 PNG 로
+            guard previewImages[k] == nil, let url = c.webfont, let fam = c.webFamily else { return }
+            previewLoading.insert(k)
+            let text = shownSample(forCatalog: c), sz = CGFloat(size), col = NSColor(fg)
+            Task {
+                if let img = await WebFontRenderer.shared.render(fontURL: url, family: fam, text: text, size: sz, color: col, maxWidth: 880) { previewImages[k] = img }
+                else { previewFailed.insert(k) }
+                previewLoading.remove(k)
+            }
+            return
+        }
+        guard previewFonts[k] == nil else { return }
         previewLoading.insert(k)
-        let text = previewText + " " + c.nameEN
+        let text = subsetText(c) + " " + c.nameEN
         Task {
             do { let f = try await PreviewLoader.font(for: c, text: text); previewFonts[k] = f }
             catch { previewFailed.insert(k) }
             previewLoading.remove(k)
+        }
+    }
+    func previewImage(_ c: CatalogItem) -> NSImage? { c.isWoff2 ? previewImages[previewKey(c)] : nil }
+
+    /// 눈누 목록 새로고침 — 카드 정보만 다시 받고(상세·라이선스는 기존 것 유지), 새 폰트를 카탈로그에 추가
+    func refreshNoonnu() {
+        guard !noonnuRefreshing else { return }
+        noonnuRefreshing = true; noonnuStatus = T("눈누 목록 받는 중…", "Fetching Noonnu…")
+        Task {
+            do {
+                let fresh = try await NoonnuFetcher.fetchAll { [weak self] n in self?.noonnuStatus = T("눈누 \(n)개…", "Noonnu \(n)…") }
+                let old = NoonnuStore.load()
+                let oldByID = Dictionary(uniqueKeysWithValues: (old?.items ?? []).map { ($0.id, $0) })
+                var merged: [NoonnuItem] = []
+                for f in fresh {
+                    if let o = oldByID[f.id] {
+                        merged.append(NoonnuItem(id: f.id, page: f.page, name: f.name, family: f.family.isEmpty ? o.family : f.family, webfont: f.webfont.isEmpty ? o.webfont : f.webfont,
+                                                 thumb: f.thumb ?? o.thumb, maker: f.maker ?? o.maker, variants: f.variants ?? o.variants, files: o.files, download: o.download, uses: o.uses, license: o.license, format: f.format ?? o.format))
+                    } else { merged.append(f) }
+                }
+                let added = fresh.filter { oldByID[$0.id] == nil }.count
+                let df = DateFormatter(); df.dateFormat = "yyyy-MM-dd"
+                NoonnuStore.save(NoonnuDB(version: 1, fetched: df.string(from: Date()), count: merged.count, items: merged))
+                catalog = CatalogLoader.load(); recomputeInstalledCatalog(); applyFilters()
+                noonnuStatus = T("눈누 \(merged.count)개 · 새 폰트 \(added)개", "Noonnu \(merged.count) · \(added) new")
+                showToast(noonnuStatus)
+            } catch { noonnuStatus = T("눈누 새로고침 실패: ", "Noonnu refresh failed: ") + error.localizedDescription }
+            noonnuRefreshing = false
         }
     }
     func previewState(_ c: CatalogItem) -> (loading: Bool, failed: Bool) { let k = previewKey(c); return (previewLoading.contains(k), previewFailed.contains(k)) }
@@ -236,6 +291,12 @@ final class Store: ObservableObject {
     func shownSample(forCatalog c: CatalogItem) -> String { latinOnly(sample.isEmpty ? c.nameEN : sample, strip: c.lang == "la" || lang == "la") }
 
     func familyCount(_ item: FontItem) -> Int { famCount[item.familyKey] ?? 1 }
+    /// 패밀리 대표(Regular 계열 우선) 목록 — Typeface Scout 태깅 대상
+    func representatives(installedOnly: Bool = true) -> [FontItem] {
+        fonts.filter { (!installedOnly || $0.source != .folder) && rep[$0.familyKey] == $0.id }
+    }
+    func representative(of item: FontItem) -> FontItem? { rep[item.familyKey].flatMap { byID[$0] } }
+    func item(id: String) -> FontItem? { byID[id] }
     func isExpanded(_ item: FontItem) -> Bool { expanded.contains(item.familyKey) }
     func toggleExpand(_ item: FontItem) { if expanded.contains(item.familyKey) { expanded.remove(item.familyKey) } else { expanded.insert(item.familyKey) }; applyFilters() }
 
@@ -346,7 +407,7 @@ final class Store: ObservableObject {
         case "laOnly": return f.source != .folder && (profiles[f.id]?.isLaOnly ?? false)
         case "recent": return f.source != .folder && f.mtime >= Date().timeIntervalSince1970 - 30 * 86400
         case "fav": return user.fav.contains(f.id)
-        case "rec:all", "rec:taste": return false
+        case "rec:all", "rec:taste", "scout": return false
         default:
             if n.hasPrefix("cat:") { return tagsOf(f).contains(String(n.dropFirst(4))) }
             if n.hasPrefix("set:") { return user.sets[String(n.dropFirst(4))]?.contains(f.id) ?? false }
@@ -435,6 +496,7 @@ final class Store: ObservableObject {
         case "fav": return T("즐겨찾기", "Favorites")
         case "rec:all": return T("추천 폰트", "Worth installing")
         case "rec:taste": return T("내 취향 추천", "For my taste")
+        case "scout": return "Typeface Scout"
         default:
             if nav.hasPrefix("cat:") { return Cat.name(String(nav.dropFirst(4))) }
             if nav.hasPrefix("set:") { return String(nav.dropFirst(4)) }
@@ -444,6 +506,7 @@ final class Store: ObservableObject {
     }
     var stripDesc: String {
         if nav == "rec:all" { return T("\(recs.count)개 · 설치하면 좋을 무료·구독 폰트 — 라이선스는 꼭 확인", "\(recs.count) · free or subscription fonts worth installing — always check the license") + (lang == "ko" ? T(" · 한글만", " · Korean only") : lang == "la" ? T(" · 영문만", " · Latin only") : "") }
+        if nav == "scout" { return T("설치된 폰트를 Muse Spark 가 보고 디자이너 말로 태깅 → 브리프로 검색 (Meta Model API)", "Muse Spark looks at your installed fonts and tags them in designer language → search by brief (Meta Model API)") }
         if nav == "rec:taste" { return tasteCount < 3 ? T("별(★)이나 세트에 폰트를 3개 이상 담으면 그 결로 골라드려요 (지금 \(tasteCount)개)", "Star or add at least 3 fonts to a set and I'll pick in that style (now \(tasteCount))") : T("\(recs.count)개 · 별·세트에 담은 \(tasteCount)개의 생김새와 비슷한 순", "\(recs.count) · closest in look to the \(tasteCount) fonts you starred or set") }
         var d = T("\(visible.count.formatted())개 · \(visibleFamilies.formatted())개 패밀리", "\(visible.count.formatted()) fonts · \(visibleFamilies.formatted()) families")
         if lang == "ko" { d += T(" · 한글 되는 것만", " · Korean-capable only") } else if lang == "la" { d += T(" · 영문 전용만", " · Latin-only") }

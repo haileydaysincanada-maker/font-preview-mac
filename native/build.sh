@@ -9,7 +9,7 @@ SDK="$(xcrun --show-sdk-path)"
 BIN="$OUT/Contents/MacOS"
 RES="$OUT/Contents/Resources"
 # 빌드 번호: 빌드마다 1씩 증가 (native/BUILD_NUMBER)
-VERSION="1.2.1"
+VERSION="1.3.0"
 AUTHOR="Hailey (haileydayz)"
 CONTACT="hello@haileydayz.com"
 BN_FILE="$HERE/BUILD_NUMBER"
@@ -60,6 +60,7 @@ PLIST
 echo -n 'APPL????' > "$OUT/Contents/PkgInfo"
 [ -f "$HERE/AppIcon.icns" ] && cp "$HERE/AppIcon.icns" "$RES/AppIcon.icns"
 cp "$HERE/catalog.json" "$RES/catalog.json"
+[ -f "$HERE/noonnu.json" ] && cp "$HERE/noonnu.json" "$RES/noonnu.json"
 # 애드혹 서명. 폴더 xattr 찌꺼기(FinderInfo 등)가 있으면 codesign 이 거부하므로 먼저 지운다.
 # 서명이 실패한 채로 배포하면 애플 실리콘 맥에서 «손상되었기 때문에 열 수 없습니다»가 뜬다 → 실패는 숨기지 않는다.
 xattr -cr "$OUT"

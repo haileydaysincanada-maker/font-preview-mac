@@ -28,6 +28,9 @@ struct FontViewerApp: App {
             CommandGroup(replacing: .newItem) {
                 Button(T("폰트 폴더 추가…", "Add Font Folder…")) { store.pickFolder() }.keyboardShortcut("o")
                 Button(T("폰트 다시 읽기", "Reload Fonts")) { store.reloadFonts() }.keyboardShortcut("r")
+                Divider()
+                Button(T("Typeface Scout — 사진으로 찾기…", "Typeface Scout — Find from Photo…")) { store.nav = "scout"; ScoutStore.shared.openPhotoPanel() }.keyboardShortcut("o", modifiers: [.command, .shift])
+                Button(T("Typeface Scout — 클립보드 이미지로 찾기", "Typeface Scout — Find from Clipboard Image")) { store.nav = "scout"; ScoutStore.shared.pasteImage() }.keyboardShortcut("v", modifiers: [.command, .shift])
             }
             CommandGroup(replacing: .help) {
                 Picker(T("화면 언어", "Language"), selection: $store.uiLang) { ForEach(UILang.allCases, id: \.self) { Text($0.title).tag($0) } }

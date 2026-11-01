@@ -38,6 +38,7 @@ struct ContentView: View {
 
 struct SidebarView: View {
     @EnvironmentObject var store: Store
+    @ObservedObject var scout = ScoutStore.shared
     var body: some View {
         List(selection: Binding(get: { Optional(store.nav) }, set: { if let v = $0 { store.nav = v } })) {
             Section(T("폰트", "Fonts")) {
@@ -45,6 +46,9 @@ struct SidebarView: View {
             }
             Section(T("추천", "Recommended")) {
                 navRow("rec:all", T("추천 폰트 (미설치)", "Worth installing")); navRow("rec:taste", T("내 취향 추천", "For my taste"))
+            }
+            Section(T("AI 로 찾기", "Find with AI")) {
+                navRow("scout", "✦ Typeface Scout", count: scout.taggedCount)
             }
             Section(T("자동 분류", "By look (auto)")) {
                 ForEach(Cat.all, id: \.0) { k, _ in navRow("cat:" + k, Cat.name(k)) }
@@ -103,11 +107,11 @@ struct SidebarView: View {
             .padding(12).frame(maxWidth: .infinity, alignment: .leading).background(.bar)
         }
     }
-    func navRow(_ id: String, _ label: String) -> some View {
+    func navRow(_ id: String, _ label: String, count: Int? = nil) -> some View {
         HStack {
             Text(label).lineLimit(1)
             Spacer()
-            Text((store.counts[id] ?? 0).formatted()).font(.system(size: 11)).foregroundColor(.secondary).monospacedDigit()
+            Text((count ?? store.counts[id] ?? 0).formatted()).font(.system(size: 11)).foregroundColor(.secondary).monospacedDigit()
         }.tag(id)
     }
 }
@@ -124,12 +128,16 @@ struct DetailView: View {
                 Text(store.stripTitle).font(.system(size: 14, weight: .bold))
                 Text(store.stripDesc).font(.system(size: 12)).foregroundColor(.secondary).lineLimit(1)
                 Spacer()
-                if store.nav.hasPrefix("rec:") { Toggle(T("설치된 것도 보기", "Show installed too"), isOn: $store.showInstalledRecs).toggleStyle(.checkbox).font(.system(size: 12)) }
+                if store.nav.hasPrefix("rec:") {
+                    Toggle(T("설치된 것도 보기", "Show installed too"), isOn: $store.showInstalledRecs).toggleStyle(.checkbox).font(.system(size: 12))
+                    if store.noonnuRefreshing { ProgressView().controlSize(.small); Text(store.noonnuStatus).font(.system(size: 11)).foregroundColor(.secondary) }
+                    else { Button(T("눈누 새로고침", "Refresh Noonnu")) { store.refreshNoonnu() }.controlSize(.small).help(T("noonnu.cc 최신 목록을 받아 새 폰트를 추가해요 (라이선스 상세는 다음 빌드 때)", "Fetch the latest noonnu.cc list and add new fonts")) }
+                }
                 Picker("", selection: $store.lang) { Text(T("전체", "All")).tag(""); Text(T("한글", "Korean")).tag("ko"); Text(T("영문 전용", "Latin only")).tag("la") }
                     .pickerStyle(.segmented).labelsHidden().frame(width: 220).help(T("지금 보는 목록에서 한글 되는 폰트만 / 영문 전용만 거르기", "Filter the current list to Korean-capable or Latin-only fonts"))
             }.padding(.horizontal, 16).padding(.vertical, 9).background(Color(nsColor: .windowBackgroundColor))
             Divider()
-            if store.nav.hasPrefix("rec:") { RecommendList() } else { FontList() }
+            if store.nav == "scout" { ScoutView() } else if store.nav.hasPrefix("rec:") { RecommendList() } else { FontList() }
         }
     }
 }
@@ -322,11 +330,15 @@ struct RecommendRow: View {
             HStack(spacing: 8) {
                 Text(c.displayName).font(.system(size: 14, weight: .bold))
                 if let sub = c.displaySub { Text(sub).foregroundColor(.secondary) }
-                pill(c.sourceLabel, tint: c.source == "adobe" ? .red : c.source == "google" ? .blue : .secondary)
-                pill(licenseText(c.license), tint: .secondary)
+                pill(c.sourceLabel, tint: c.source == "adobe" ? .red : c.source == "google" ? .blue : c.source == "noonnu" ? .orange : .secondary)
+                if c.source == "noonnu" {
+                    if let u = c.uses, !u.isEmpty { pill(T("허용 \(u.count)/7 · ", "allowed \(u.count)/7 · ") + u.prefix(4).joined(separator: "·"), tint: .secondary).help(u.joined(separator: " · ")) }
+                    else { pill(licenseText(c.license), tint: .secondary) }
+                } else { pill(licenseText(c.license), tint: .secondary) }
                 if installed { pill(T("설치됨 ✓", "Installed ✓"), tint: .green) }
                 Spacer()
-                Button(c.source == "adobe" ? T("활성화 페이지", "Activate on Adobe") : T("페이지 열기", "Open page")) { store.openPage(c) }
+                if c.source == "noonnu", let dl = c.download, let u = URL(string: dl) { Button(T("다운로드 페이지", "Download page")) { NSWorkspace.shared.open(u) }.help(dl) }
+                Button(c.source == "adobe" ? T("활성화 페이지", "Activate on Adobe") : c.source == "noonnu" ? T("눈누 페이지", "Noonnu page") : T("페이지 열기", "Open page")) { store.openPage(c) }
                 if c.canInstall && !installed {
                     if store.installing.contains(c.id) { ProgressView().controlSize(.small).frame(width: 60) }
                     else { Button(T("설치", "Install")) { store.install(c) }.buttonStyle(.borderedProminent) }
@@ -334,7 +346,10 @@ struct RecommendRow: View {
             }
             Text(c.displayDesc).font(.system(size: 12))
             Group {
-                if let f = store.previewFont(c) {
+                if let img = store.previewImage(c) {
+                    Image(nsImage: img).resizable().aspectRatio(contentMode: .fit).frame(width: img.size.width, height: img.size.height)
+                        .help(T("woff2 웹폰트라 이미지로 그렸어요 (글자는 진짜 폰트)", "Drawn as an image from the woff2 webfont (real glyphs)"))
+                } else if let f = store.previewFont(c) {
                     Text(store.shownSample(forCatalog: c)).font(f).foregroundColor(store.fg).lineSpacing(2).fixedSize(horizontal: false, vertical: true)
                 } else if store.previewState(c).loading {
                     HStack(spacing: 8) { ProgressView().controlSize(.small); Text(T("미리보기 불러오는 중…", "Loading preview…")).font(.system(size: 11)).foregroundColor(.secondary) }.frame(height: CGFloat(store.size) * 1.2)
@@ -348,6 +363,9 @@ struct RecommendRow: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .onAppear { store.loadPreview(c) }
             .onChange(of: store.previewText) { _ in store.loadPreview(c) }
+            .onChange(of: store.lang) { _ in store.loadPreview(c) }   // 영문 전용 토글이 바뀌면 표시 문구(서브셋)도 바뀐다
+            .onChange(of: store.size) { _ in if c.isWoff2 { store.loadPreview(c) } }
+            .onChange(of: store.fg) { _ in if c.isWoff2 { store.loadPreview(c) } }
             HStack(spacing: 6) {
                 ForEach(c.tags, id: \.self) { t in Text(Cat.name(t)).font(.system(size: 11)).padding(.horizontal, 7).padding(.vertical, 1).background(Color.primary.opacity(0.07)).cornerRadius(9) }
                 Text(c.lang == "ko" ? T("한글", "Korean") : T("영문", "Latin")).font(.system(size: 11)).foregroundColor(.secondary)

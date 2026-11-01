@@ -25,6 +25,30 @@ struct CatalogItem: Codable, Identifiable, Hashable {
     let install: CatalogInstall?
     let preview: String?      // 미리보기용 단일 파일 직링크 (GitHub 배포분)
     let descEN: String?
+    // 눈누(noonnu) 항목 전용 — 다른 소스는 nil
+    let maker: String?
+    let webfont: String?      // jsDelivr 웹폰트 URL (woff → CoreText 라이브, woff2 → 웹뷰 PNG)
+    let webFamily: String?    // @font-face 패밀리 토큰
+    let thumb: String?        // 눈누 썸네일(이름을 그 폰트로 그린 PNG)
+    let variants: String?     // "9가지 굵기"
+    let uses: [String]?       // 허용 용도 (인쇄·웹사이트·포장지·영상·임베딩·BI/CI·OFL)
+    let download: String?     // 배포처 다운로드 페이지
+
+    var isWoff2: Bool { (webfont ?? "").hasSuffix(".woff2") }
+    var isWoff: Bool { (webfont ?? "").hasSuffix(".woff") }
+
+    static func fromNoonnu(_ n: NoonnuItem) -> CatalogItem {
+        let allowed = (n.uses ?? [:]).filter { $0.value == "허용" }.keys.sorted { a, b in
+            let order = ["인쇄", "웹사이트", "포장지", "영상", "임베딩", "BI/CI", "OFL"]; return (order.firstIndex(of: a) ?? 99) < (order.firstIndex(of: b) ?? 99) }
+        let lic = (n.license ?? "").trimmingCharacters(in: .whitespaces)
+        let famBase = n.family.split(separator: "-").first.map(String.init) ?? n.family
+        return CatalogItem(id: n.id, name: n.name, nameEN: n.family.isEmpty ? n.name : famBase, lang: "ko", source: "noonnu", page: n.page,
+                           license: lic.isEmpty ? T("상업용 무료 (눈누 등록)", "Free for commercial use (listed on Noonnu)") : lic,
+                           tags: [], desc: [n.maker, n.variants].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: " · "),
+                           match: [n.name, famBase].filter { !$0.isEmpty }, install: nil, preview: nil, descEN: nil,
+                           maker: n.maker, webfont: n.webfont.isEmpty ? nil : n.webfont, webFamily: n.family.isEmpty ? nil : n.family, thumb: n.thumb,
+                           variants: n.variants, uses: allowed, download: (n.download ?? "").isEmpty ? nil : n.download)
+    }
 
     /// 화면 언어에 맞는 이름: 영어 UI 면 영문명을 앞에, 한글명은 뒤에
     var displayName: String { UILang.current == .en ? nameEN : name }
@@ -34,13 +58,14 @@ struct CatalogItem: Codable, Identifiable, Hashable {
     }
     var displayDesc: String { UILang.current == .en ? (descEN ?? desc) : desc }
 
-    var previewable: Bool { source == "google" || preview != nil }
+    var previewable: Bool { source == "google" || preview != nil || webfont != nil }
 
     var sourceLabel: String {
         switch source {
         case "google": return "Google Fonts"
         case "github": return T("GitHub 배포", "GitHub release")
         case "adobe": return "Adobe Fonts"
+        case "noonnu": return T("눈누", "Noonnu")
         default: return T("배포처", "Distributor")
         }
     }
@@ -59,10 +84,23 @@ enum CatalogLoader {
             CONF_DIR.appendingPathComponent("catalog.json"),                  // 사용자가 덮어쓴 것이 있으면 우선
             Bundle.main.url(forResource: "catalog", withExtension: "json"),
         ].compactMap { $0 }
+        var items: [CatalogItem] = []
         for u in candidates {
-            if let d = try? Data(contentsOf: u), let c = try? JSONDecoder().decode(Catalog.self, from: d) { return c.items }
+            if let d = try? Data(contentsOf: u), let c = try? JSONDecoder().decode(Catalog.self, from: d) { items = c.items; break }
         }
-        return []
+        // 눈누 전체 목록을 개별 폰트로 합친다 — 묶음 링크(«마포 서체 (꽃섬·배낭여행 등)») 항목은 눈누 개별 항목이 대신한다
+        if let db = NoonnuStore.load() {
+            func norm(_ s: String) -> String { s.lowercased().filter { $0.isLetter || $0.isNumber } }
+            var known = Set<String>()
+            for c in items where c.source != "link" { for k in [c.name, c.nameEN] + c.match { known.insert(norm(k)) } }
+            items.removeAll { $0.source == "link" && $0.lang == "ko" }
+            for n in db.items where !n.webfont.isEmpty {
+                let famBase = n.family.split(separator: "-").first.map(String.init) ?? n.family
+                if known.contains(norm(n.name)) || (!famBase.isEmpty && known.contains(norm(famBase))) { continue }
+                items.append(.fromNoonnu(n))
+            }
+        }
+        return items
     }
 }
 
@@ -168,7 +206,13 @@ enum PreviewLoader {
         let base = item.source == "google" ? dir.appendingPathComponent(safeName(item.id) + "_" + shortHash(text)) : dir.appendingPathComponent(safeName(item.id))
         var file: URL? = ["ttf", "otf"].map { base.appendingPathExtension($0) }.first { FileManager.default.fileExists(atPath: $0.path) }
         if file == nil {
-            if let p = item.preview, let u = URL(string: p) {
+            if item.isWoff, let w = item.webfont, let u = URL(string: w) {
+                // 눈누 woff → zlib 풀어 sfnt 로 (CoreText 가 읽는 ttf/otf 와 같은 바이트 구조)
+                let raw = try await Installer.fetch(u)
+                guard let sfnt = WOFF.decode(raw) else { throw InstallError.noFiles }
+                let out = base.appendingPathExtension("ttf")
+                try sfnt.write(to: out); file = out
+            } else if let p = item.preview, let u = URL(string: p) {
                 let out = base.appendingPathExtension(u.pathExtension.isEmpty ? "otf" : u.pathExtension)
                 try (try await Installer.fetch(u)).write(to: out); file = out
             } else if item.source == "google" {
