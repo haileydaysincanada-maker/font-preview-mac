@@ -18,7 +18,10 @@ Meta Global AI Developer Hackathon 2026 출품분. 새 파일 `native/Sources/Sc
 - 🔴 **`-contributor` 모델 금지**(이미지가 학습에 제공됨). 키 값은 채팅·로그·커밋에 절대 출력 금지.
 - 자동화 한계: 열기 패널(별도 프로세스)·클립보드·드래그는 컴퓨터 제어 도구가 막아서 사진 진입 3개는 공통 함수를 `SCOUT_TEST_PHOTO` 로 검증 — 실제 패널·드롭·붙여넣기는 손 검증 필요.
 - Store: `representatives(installedOnly:)`·`representative(of:)`·`item(id:)` 추가, nav `scout`. 빌드 27.
-- **릴리스**: GitHub `v1.3.0` + `FontPreview-1.3.0.zip`(빌드 27, 애드혹 서명, 압축 해제본 `codesign --verify --deep --strict` 통과). 해커톤 제출 폼이 공개 레포를 요구해 제출 전에 올림. README 정정 2곳(«이미지 생성 없음» → 글자만 생성 안 함·배경 장면 설명도 API 로 나감 / 눈누 태깅 ≈500 → ≈400개·$0.003).
+- **릴리스**: GitHub `v1.3.0` + `FontPreview-1.3.0.zip`(처음 빌드 27 → 같은 날 밤 **빌드 30 으로 교체** = 아래 ⌘V 붙여넣기 수정, 애드혹 서명, 압축 해제본 `codesign --verify --deep --strict` 통과). 해커톤 제출 폼이 공개 레포를 요구해 제출 전에 올림. README 정정 2곳(«이미지 생성 없음» → 글자만 생성 안 함·배경 장면 설명도 API 로 나감 / 눈누 태깅 ≈500 → ≈400개·$0.003).
+- 🐛 **클립보드 사진 붙여넣기 2건**(11/1 저녁 헤일리 손 검증 «텍스트 칸에 클립보드 이미지를 붙이면 안 보인다 / 사진 넣는 곳에 에러가 있는 듯»): ① 브리프 칸에서 ⌘V 하면 글자 칸이 이미지를 버려 아무 일도 안 일어났다 → Scout 화면에서 ⌘V 를 가로채 클립보드에 사진이 있고 같이 실린 글자가 없거나 URL·파일 이름뿐이면 사진 찾기로 보낸다(본문 글자가 같이 있으면 평소처럼 글자 붙이기). ② Finder 에서 이미지 파일을 복사해 붙이면 `NSImage(pasteboard:)` 가 사진 대신 **파일 아이콘**(1024×1024)을 돌려줬다 → 파일 URL 을 먼저 읽어 실제 사진을 쓰고, 이미지가 아닌 파일이면 무시(`clipboardPhoto`). 모의 클립보드 7종(일반 JPEG·Finder JPEG·Finder txt·Safari·Chrome·글+이미지·글만) 판정 확인. 📷 메뉴 항목에 «(⌘V)», 빈 화면 안내에 «복사해서 ⌘V». 빌드 29.
+  - 빌드 29 에서도 ⌘V 가 안 됐다(헤일리 «커맨드 V 붙여넣기가 안 돼», 크롬에서 끌어다 놓기는 됨): **한글 2벌식 입력 중엔 V 키의 `charactersIgnoringModifiers` 가 «ㅍ»**(현재 자판 `2SetHangul`, UCKeyTranslate 로 확인)라 «v» 비교가 늘 실패. → `ScoutView.isPasteKey` — 라틴 글자가 오면 그 글자로, 아니면 물리 키 위치(V = keyCode 9)로 판단. 합성 이벤트 6종(한글 ⌘ㅍ·ABC ⌘v·드보락 ⌘k·⌘⇧V·⌘ 없는 ㅍ·한글 ⌘ㅊ) 판정 OK. 빌드 30.
+- 🔧 `build.sh` 서명: 데스크톱이 iCloud 파일 프로바이더로 동기화돼 번들에 FinderInfo 가 즉시 다시 붙으면서 제자리 서명이 «detritus not allowed» 로 실패(빌드 28). → 임시 폴더 사본에서 서명·검증하고 그 사본으로 `FontPreview-<버전>.zip` 을 만든 뒤 제자리에 되돌린다. 릴리스 zip 은 이제 빌드가 직접 만든다.
 
 ## 2026-10-17 — 릴리스 zip 서명 수정(같은 v1.2.1, 빌드 6으로 재업로드) + macOS 15 여는 법
 

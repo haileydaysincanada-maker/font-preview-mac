@@ -772,10 +772,32 @@ final class ScoutStore: ObservableObject {
     func clearPhoto() { photo = nil; photoNote = "" }
     /// 클립보드의 이미지(또는 이미지 파일 경로)로 찾기 — 웹에서 간판 사진을 복사해 바로 붙여넣는 경로
     func pasteImage() {
-        let pb = NSPasteboard.general
-        if let img = NSImage(pasteboard: pb) { findFromPhoto(img); return }
-        if let urls = pb.readObjects(forClasses: [NSURL.self], options: [.urlReadingFileURLsOnly: true]) as? [URL], let u = urls.first, let img = NSImage(contentsOf: u) { findFromPhoto(img); return }
+        if let img = ScoutStore.clipboardPhoto() { findFromPhoto(img); return }
         status = T("클립보드에 이미지가 없어요 — 사진을 복사한 뒤 다시 눌러 주세요", "No image on the clipboard — copy a photo first")
+    }
+    /// 클립보드에서 사진 꺼내기. Finder 에서 복사한 파일이면 파일 내용을 먼저 읽는다
+    /// (NSImage(pasteboard:) 는 Finder 복사본에서 파일 *아이콘* 을 돌려줄 수 있다). 이미지가 아닌 파일이면 nil.
+    static func clipboardPhoto() -> NSImage? {
+        let pb = NSPasteboard.general
+        if let urls = pb.readObjects(forClasses: [NSURL.self], options: [.urlReadingFileURLsOnly: true]) as? [URL], !urls.isEmpty {
+            for u in urls where (UTType(filenameExtension: u.pathExtension)?.conforms(to: .image) ?? false) {
+                if let img = NSImage(contentsOf: u) { return img }
+            }
+            return nil
+        }
+        let types: [NSPasteboard.PasteboardType] = [.png, .tiff, NSPasteboard.PasteboardType("public.jpeg"), NSPasteboard.PasteboardType("public.heic"), NSPasteboard.PasteboardType("com.compuserve.gif"), NSPasteboard.PasteboardType("org.webmproject.webp")]
+        guard pb.availableType(from: types) != nil else { return nil }
+        return NSImage(pasteboard: pb)
+    }
+    /// ⌘V 를 사진 붙여넣기로 가로챌지 — 클립보드에 사진이 있고, 같이 실린 글자가 없거나 URL·파일 이름뿐일 때만.
+    /// (본문 글자가 함께 있으면 평소처럼 글자를 붙인다)
+    static func clipboardPhotoForPaste() -> NSImage? {
+        guard let img = clipboardPhoto() else { return nil }
+        let pb = NSPasteboard.general
+        let hasFiles = !((pb.readObjects(forClasses: [NSURL.self], options: [.urlReadingFileURLsOnly: true]) as? [URL]) ?? []).isEmpty
+        let text = (pb.string(forType: .string) ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        if hasFiles || text.isEmpty || (!text.contains(" ") && (text.hasPrefix("http") || text.hasPrefix("file:") || text.hasPrefix("data:"))) { return img }
+        return nil
     }
     func openPhotoPanel() {
         let p = NSOpenPanel()
@@ -951,6 +973,7 @@ struct ScoutView: View {
     @ObservedObject var scout = ScoutStore.shared
     @FocusState private var briefFocused: Bool
     @State private var dropping = false
+    @State private var pasteMonitor: Any? = nil
     var body: some View {
         VStack(spacing: 0) {
             VStack(alignment: .leading, spacing: 10) {
@@ -971,7 +994,7 @@ struct ScoutView: View {
                     }.buttonStyle(.borderedProminent).controlSize(.large).disabled(scout.searching || scout.describing || scout.brief.trimmingCharacters(in: .whitespaces).isEmpty)
                     Menu {
                         Button(T("사진 고르기…", "Choose a photo…")) { scout.openPhotoPanel() }
-                        Button(T("클립보드 이미지 붙여넣기", "Paste image from clipboard")) { scout.pasteImage() }
+                        Button(T("클립보드 이미지 붙여넣기 (⌘V)", "Paste image from clipboard (⌘V)")) { scout.pasteImage() }
                     } label: {
                         if scout.describing { ProgressView().controlSize(.small).frame(width: 22) } else { Image(systemName: "photo.badge.magnifyingglass").frame(width: 22) }
                     }.menuStyle(.borderedButton).menuIndicator(.hidden).fixedSize().controlSize(.large).disabled(scout.describing || scout.searching)
@@ -1020,7 +1043,7 @@ struct ScoutView: View {
                             Image(systemName: "sparkle.magnifyingglass").font(.system(size: 28)).foregroundColor(.secondary)
                             Text(scout.taggedCount == 0
                                  ? T("1) 「내 폰트 태깅」 — 설치된 폰트를 Muse Spark 가 디자이너 말로 설명해 둬요\n2) 브리프를 쓰고 「찾기」", "1) “Tag my fonts” — Muse Spark describes your installed fonts in designer language\n2) Write a brief and press “Find”")
-                                 : T("브리프를 쓰고 「찾기」 — 분위기·용도·시대·언어를 말로 적으면 돼요\n또는 간판·포스터 사진을 이 창에 끌어다 놓기", "Write a brief and press “Find” — mood, use, era, language, in plain words\nor drop a photo of a sign or poster onto this window"))
+                                 : T("브리프를 쓰고 「찾기」 — 분위기·용도·시대·언어를 말로 적으면 돼요\n또는 간판·포스터 사진을 이 창에 끌어다 놓거나 복사해서 ⌘V", "Write a brief and press “Find” — mood, use, era, language, in plain words\nor drop a photo of a sign or poster onto this window, or copy it and press ⌘V"))
                                 .multilineTextAlignment(.center).foregroundColor(.secondary)
                             if scout.taggedCount > 0 {
                                 Text(T("이런 식으로 —", "Try one —")).font(.system(size: 11)).foregroundColor(.secondary).padding(.top, 6)
@@ -1043,6 +1066,20 @@ struct ScoutView: View {
             .environment(\.colorScheme, store.bgIsDark ? .dark : .light)
         }
         .onDrop(of: [UTType.fileURL, UTType.image], isTargeted: $dropping) { scout.acceptDrop($0) }
+        .onAppear {
+            // 브리프 칸(또는 Scout 화면 어디서든)에서 ⌘V — 클립보드에 사진만 있으면 글자 칸은 무시해 버리므로 사진 찾기로 돌린다
+            if pasteMonitor == nil {
+                pasteMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { ev in
+                    guard ScoutView.isPasteKey(ev),
+                          store.nav == "scout", ev.window?.attachedSheet == nil, ev.window?.isMainWindow == true,
+                          !scout.describing, !scout.searching,
+                          let img = ScoutStore.clipboardPhotoForPaste() else { return ev }
+                    scout.findFromPhoto(img)
+                    return nil
+                }
+            }
+        }
+        .onDisappear { if let m = pasteMonitor { NSEvent.removeMonitor(m); pasteMonitor = nil } }
         .onAppear {   // 개발용: SCOUT_TEST_PHOTO=<이미지 경로> 로 실행하면 그 사진으로 바로 찾기 (UI 자동 검증)
             if scout.photo == nil, let p = ProcessInfo.processInfo.environment["SCOUT_TEST_PHOTO"], let img = NSImage(contentsOfFile: p) { scout.findFromPhoto(img) }
             if let n = ProcessInfo.processInfo.environment["SCOUT_TAG_CATALOG"].flatMap(Int.init), !scout.tagging { scout.tagCatalog(limit: n) }   // 개발용: 눈누 N개 시험 태깅
@@ -1053,6 +1090,14 @@ struct ScoutView: View {
 }
 
 extension ScoutView {
+    /// ⌘V 인가 — 한글 2벌식 입력 중엔 V 키가 «ㅍ» 로 들어오므로(charactersIgnoringModifiers) 글자만 보면 놓친다.
+    /// 라틴 글자가 오면 그 글자로, 아니면 물리 키 위치(V = keyCode 9)로 판단.
+    static func isPasteKey(_ ev: NSEvent) -> Bool {
+        guard ev.modifierFlags.intersection(.deviceIndependentFlagsMask) == .command else { return false }
+        let k = (ev.charactersIgnoringModifiers ?? "").lowercased()
+        if let c = k.unicodeScalars.first, c.isASCII { return k == "v" }
+        return ev.keyCode == 9
+    }
     /// 빈 상태의 예시 브리프 (한/영) — «이런 말엔 이런 폰트» 입구
     static let examples: [(String, String)] = [
         ("베이커리 간판용 따뜻한 손글씨, 한글·영문 둘 다", "Warm hand-lettered font for a bakery sign, Korean + English"),

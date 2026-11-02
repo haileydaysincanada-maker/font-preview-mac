@@ -63,7 +63,19 @@ cp "$HERE/catalog.json" "$RES/catalog.json"
 [ -f "$HERE/noonnu.json" ] && cp "$HERE/noonnu.json" "$RES/noonnu.json"
 # 애드혹 서명. 폴더 xattr 찌꺼기(FinderInfo 등)가 있으면 codesign 이 거부하므로 먼저 지운다.
 # 서명이 실패한 채로 배포하면 애플 실리콘 맥에서 «손상되었기 때문에 열 수 없습니다»가 뜬다 → 실패는 숨기지 않는다.
-xattr -cr "$OUT"
-codesign --force --sign - "$OUT"
-codesign --verify --deep --strict "$OUT" || { echo "❌ 서명 검증 실패 — 배포하지 말 것" >&2; exit 1; }
+# 데스크톱이 iCloud(파일 프로바이더)로 동기화되면 번들에 FinderInfo 가 바로 다시 붙어 제자리 서명이 실패한다(2026-11-01)
+# → 임시 폴더의 사본에서 서명·검증하고, 그 사본으로 릴리스 zip 을 만든 뒤 제자리에 되돌려 놓는다.
+SIGNDIR="$(mktemp -d)"
+SIGNED="$SIGNDIR/${OUT:t}"
+ditto "$OUT" "$SIGNED"
+xattr -cr "$SIGNED"
+codesign --force --sign - "$SIGNED"
+codesign --verify --deep --strict "$SIGNED" || { echo "❌ 서명 검증 실패 — 배포하지 말 것" >&2; exit 1; }
+ZIP="$HERE/../FontPreview-$VERSION.zip"
+rm -f "$ZIP"
+(cd "$SIGNDIR" && ditto -c -k --norsrc --noextattr --keepParent "${OUT:t}" "$ZIP")
+rm -rf "$OUT"
+ditto --norsrc --noextattr "$SIGNED" "$OUT"
+rm -rf "$SIGNDIR"
 echo "✅ $OUT  (v$VERSION 빌드 $BUILD, $BUILT_AT)"
+echo "📦 릴리스 zip (서명 검증한 사본) = ${ZIP:A}"
